@@ -1,5 +1,5 @@
 // Service worker Buku Tani: simpan seluruh berkas aplikasi agar bisa dibuka tanpa internet.
-const CACHE = 'bukutani-v1';
+const CACHE = 'bukutani-v2';
 const FILES = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './icon-512-maskable.png'];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));

@@ -43,7 +43,7 @@ jobs:
       - name: Terbitkan rilis
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.0.${{ github.run_number }}
+          tag_name: v2.0.${{ github.run_number }}
           name: Buku Tani v1.4 (build ${{ github.run_number }})
           files: BukuTani.apk
           body: "APK Buku Tani. Unduh BukuTani.apk, buka di HP Android, izinkan pemasangan dari sumber tidak dikenal bila diminta."
