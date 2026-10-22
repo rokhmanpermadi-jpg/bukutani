@@ -1,0 +1,49 @@
+name: Bangun APK
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v5
+        with: { distribution: temurin, java-version: '17' }
+      - name: Siapkan Android SDK (bawaan runner)
+        run: |
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses >/dev/null 2>&1 || true
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-34" "build-tools;34.0.0" "platform-tools" >/dev/null
+      - uses: gradle/actions/setup-gradle@v5
+        with: { gradle-version: '8.7' }
+      - name: Siapkan keystore
+        run: |
+          if [ -n "${{ secrets.KEYSTORE_B64 }}" ]; then
+            echo "${{ secrets.KEYSTORE_B64 }}" | base64 -d > $RUNNER_TEMP/release.jks
+            echo "KEYSTORE_PASS=${{ secrets.KEYSTORE_PASS }}" >> $GITHUB_ENV
+            echo "KEY_ALIAS=${{ secrets.KEY_ALIAS }}" >> $GITHUB_ENV
+            echo "KEY_PASS=${{ secrets.KEY_PASS }}" >> $GITHUB_ENV
+          else
+            keytool -genkeypair -v -keystore $RUNNER_TEMP/release.jks -alias bukukas -keyalg RSA -keysize 2048 -validity 10000 \
+              -storepass bukukas123 -keypass bukukas123 -dname "CN=Buku Tani, O=Buku Tani, C=ID"
+            echo "KEYSTORE_PASS=bukukas123" >> $GITHUB_ENV
+            echo "KEY_ALIAS=bukukas" >> $GITHUB_ENV
+            echo "KEY_PASS=bukukas123" >> $GITHUB_ENV
+          fi
+          echo "KEYSTORE_PATH=$RUNNER_TEMP/release.jks" >> $GITHUB_ENV
+      - name: Bangun APK rilis
+        run: gradle --no-daemon assembleRelease
+      - name: Ganti nama APK
+        run: cp app/build/outputs/apk/release/app-release.apk BukuTani.apk
+      - uses: actions/upload-artifact@v4
+        with: { name: BukuTani-apk, path: BukuTani.apk }
+      - name: Terbitkan rilis
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.${{ github.run_number }}
+          name: Buku Tani v1.4 (build ${{ github.run_number }})
+          files: BukuTani.apk
+          body: "APK Buku Tani. Unduh BukuTani.apk, buka di HP Android, izinkan pemasangan dari sumber tidak dikenal bila diminta."

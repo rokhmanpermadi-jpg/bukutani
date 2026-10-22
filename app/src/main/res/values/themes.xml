@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.BukuKas" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:statusBarColor">#1E8A5B</item>
+        <item name="android:navigationBarColor">#FFFFFF</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowBackground">#F6FAF7</item>
+    </style>
+</resources>
