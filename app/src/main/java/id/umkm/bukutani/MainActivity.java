@@ -9,7 +9,14 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.print.PrintAttributes;
+import android.print.PrintManager;
+import android.webkit.GeolocationPermissions;
 import android.webkit.JavascriptInterface;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -28,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
     private WebView web;
     private ValueCallback<Uri[]> filePathCallback;
     private static final int FILE_CHOOSER = 101;
+    private static final int REQ_LOC = 202;
+    private String geoOrigin; private GeolocationPermissions.Callback geoCb;
+    private WebView printView;
 
     @SuppressLint("SetJavaScriptEnabled")
     @Override
@@ -42,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         s.setAllowFileAccess(false);
         s.setCacheMode(WebSettings.LOAD_DEFAULT);
         s.setTextZoom(100);
+        s.setGeolocationEnabled(true);
         web.addJavascriptInterface(new Bridge(), "Android");
 
         // Serve assets at https://appassets.androidplatform.net/assets/ so that localStorage works on a secure origin.
@@ -61,6 +72,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         web.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
+                if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                        || ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    callback.invoke(origin, true, false);
+                } else {
+                    geoOrigin = origin; geoCb = callback;
+                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, REQ_LOC);
+                }
+            }
             @Override
             public boolean onShowFileChooser(WebView v, ValueCallback<Uri[]> cb, FileChooserParams params) {
                 if (filePathCallback != null) filePathCallback.onReceiveValue(null);
@@ -86,6 +107,15 @@ public class MainActivity extends AppCompatActivity {
             Uri[] r = (res == Activity.RESULT_OK && data != null && data.getData() != null) ? new Uri[]{data.getData()} : null;
             filePathCallback.onReceiveValue(r);
             filePathCallback = null;
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int req, String[] perms, int[] res) {
+        super.onRequestPermissionsResult(req, perms, res);
+        if (req == REQ_LOC && geoCb != null) {
+            boolean ok = false; for (int r : res) if (r == PackageManager.PERMISSION_GRANTED) ok = true;
+            geoCb.invoke(geoOrigin, ok, false); geoCb = null;
         }
     }
 
@@ -122,6 +152,27 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(Intent.createChooser(sh, "Bagikan " + name));
                 } catch (Exception e) {
                     Toast.makeText(MainActivity.this, "Gagal menyimpan berkas: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+        // Cetak laporan HTML ke PDF lewat dialog cetak Android.
+        @JavascriptInterface
+        public void print(final String html) {
+            runOnUiThread(() -> {
+                try {
+                    printView = new WebView(MainActivity.this);
+                    printView.getSettings().setJavaScriptEnabled(false);
+                    printView.setWebViewClient(new WebViewClient() {
+                        @Override public void onPageFinished(WebView v, String url) {
+                            PrintManager pm = (PrintManager) getSystemService(PRINT_SERVICE);
+                            String job = "Buku Usahatani " + new java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.ROOT).format(new java.util.Date());
+                            pm.print(job, v.createPrintDocumentAdapter(job), new PrintAttributes.Builder().setMediaSize(PrintAttributes.MediaSize.ISO_A4).build());
+                        }
+                    });
+                    printView.loadDataWithBaseURL(null, html, "text/html", "UTF-8", null);
+                    Toast.makeText(MainActivity.this, "Pilih \"Simpan sebagai PDF\" pada dialog cetak", Toast.LENGTH_LONG).show();
+                } catch (Exception e) {
+                    Toast.makeText(MainActivity.this, "Gagal mencetak: " + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
             });
         }

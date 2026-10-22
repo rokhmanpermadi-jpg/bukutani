@@ -111,8 +111,8 @@ section.view{display:flex;flex-direction:column;gap:16px}
 .hero .hrow{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .hero .big{font-size:1.9rem;font-weight:800;letter-spacing:-.02em;line-height:1.15}
 .hero .lbl{font-size:.74rem;opacity:.85}
-.hero .glass{background:rgba(255,255,255,.14);border-radius:14px;padding:10px 12px;font-size:.78rem;display:grid;grid-template-columns:20px 1fr;gap:8px;align-items:flex-start}
-.hero .glass b{display:block;font-family:var(--display)}
+.hero .glass:not(.pill){background:rgba(255,255,255,.14);border-radius:14px;padding:10px 12px;font-size:.78rem;display:grid;grid-template-columns:20px 1fr;gap:8px;align-items:flex-start}
+.hero .glass:not(.pill) b{display:block;font-family:var(--display)}
 .hero .hstats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .hero .hstats div{background:rgba(255,255,255,.12);border-radius:12px;padding:8px 10px}
 .hero .hstats label{font-size:.68rem;opacity:.85;display:block}
@@ -333,6 +333,108 @@ nav.bottom button[aria-current="page"]{color:var(--accent);font-weight:700}
 .lightbox[hidden]{display:none}
 .lightbox img{max-width:100%;max-height:90vh;border-radius:12px}
 @media (prefers-reduced-motion:no-preference){.row,.btn,.chip,.quick button{transition:background .15s,transform .08s}}
+
+/* ===== v2.1: elemen daring & pelengkap ===== */
+.iconbtn.bell{position:relative}
+.iconbtn .dotb{position:absolute;right:9px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--red);border:2px solid var(--surface)}
+.iconbtn .dotb[hidden]{display:none}
+.avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.search{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line-soft);border-radius:999px;padding:6px 8px 6px 16px;box-shadow:var(--shadow-1)}
+.search svg{width:20px;height:20px;stroke:var(--muted);fill:none;stroke-width:2;stroke-linecap:round;flex:0 0 auto}
+.search input{flex:1;border:0;background:none;min-height:36px;outline:none;font-size:.9rem;min-width:0}
+.search button{width:36px;height:36px;border-radius:50%;border:0;background:var(--mint);color:var(--accent);display:grid;place-items:center}
+.search button svg{stroke:currentColor;width:18px;height:18px}
+.cres{display:flex;flex-direction:column;gap:6px;background:var(--surface);border:1px solid var(--line-soft);border-radius:18px;padding:8px;box-shadow:var(--shadow-2);margin-top:-6px}
+.cres[hidden]{display:none}
+.cres button{display:grid;grid-template-columns:36px 1fr auto;gap:10px;align-items:center;border:0;background:none;text-align:left;padding:8px;border-radius:12px;color:var(--fg)}
+.cres button:hover{background:var(--mint)}
+.cres .ic{width:36px;height:36px;border-radius:10px;background:var(--mint);color:var(--accent);display:grid;place-items:center}.cres .ic svg{width:18px;height:18px}
+.cres b{font-family:var(--display);font-size:.86rem;display:block}.cres span.s{font-size:.72rem;color:var(--muted);display:block}
+.cres .k{font-size:.66rem;color:var(--muted);font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+/* Cuaca */
+.hero.cuaca{gap:10px}
+.cw{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center}
+.cw .cw-ic{width:64px;height:64px;border-radius:18px;background:rgba(255,255,255,.14);display:grid;place-items:center}
+.cw .cw-ic svg{width:40px;height:40px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cw .big{font-size:2.1rem}
+.cw .big sup{font-size:1rem;font-weight:600;vertical-align:top;margin-left:2px}
+.cw .cw-r{display:flex;flex-direction:column;gap:6px;font-size:.74rem;text-align:right;opacity:.95}
+.cw .cw-r b{display:block;font-size:.92rem;font-family:var(--display)}
+.hero .glass.set{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.hero .glass.set .btn{min-height:38px;padding:0 14px;border-radius:999px;background:#fff;color:var(--accent-2);border:0;font-size:.78rem}
+.hero .glass.set .btn.ghost{background:rgba(255,255,255,.18);color:#fff}
+.hero .glass.set p{margin:0;flex:1 1 100%;font-size:.8rem}
+.cwfoot{display:flex;justify-content:space-between;font-size:.7rem;opacity:.85}
+.cwfoot button{border:0;background:none;color:#fff;text-decoration:underline;font-size:.7rem;padding:0}
+/* Artikel & penyuluh */
+.art{display:grid;grid-template-columns:104px 1fr;gap:12px;background:var(--surface);border:1px solid var(--line-soft);border-radius:20px;padding:10px;box-shadow:var(--shadow-1);text-align:left;width:100%;color:var(--fg)}
+.art .im{position:relative;border-radius:14px;overflow:hidden;min-height:112px;background:linear-gradient(160deg,#9fd8b4,#1b7a43 70%,#0f4d2a)}
+.art .im svg{position:absolute;inset:0;width:100%;height:100%}
+.art .im .rd{position:absolute;left:8px;bottom:8px;color:#fff;font-size:.66rem;font-weight:700;font-family:var(--display);background:rgba(0,0,0,.35);padding:3px 8px;border-radius:999px}
+.art .t{display:flex;flex-direction:column;gap:4px;min-width:0;padding:4px 4px 4px 0}
+.art .tags{display:flex;gap:6px;align-items:center;font-size:.7rem;color:var(--muted)}
+.art .tags .pill{font-size:.64rem;padding:3px 8px}
+.art h4{margin:0;font-family:var(--display);font-size:.98rem;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.art p{margin:0;font-size:.76rem;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.art.full{grid-template-columns:1fr}.art.full .im{min-height:140px}
+.peny{display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:center;background:var(--mint);border-radius:20px;padding:14px}
+.peny .ic{width:48px;height:48px;border-radius:14px;background:var(--accent);color:#fff;display:grid;place-items:center}
+.peny b{font-family:var(--display);display:block;font-size:.92rem}.peny span{font-size:.76rem;color:var(--muted);display:block}
+.peny .btn{min-height:38px;padding:0 14px;border-radius:999px;font-size:.78rem}
+.baca{font-size:.92rem;line-height:1.6}.baca p{margin:0 0 10px}.baca h4{font-family:var(--display);margin:14px 0 6px;font-size:1rem}.baca ul{margin:0 0 10px;padding-left:18px}.baca .lead{font-size:.8rem;color:var(--muted)}
+/* Notifikasi, jadwal, diagnosa */
+.nrow{display:grid;grid-template-columns:40px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--line-soft);background:none;border-left:0;border-right:0;border-bottom:0;text-align:left;width:100%;color:var(--fg)}
+.nrow:first-child{border-top:0}
+.nrow .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--mint);color:var(--accent)}
+.nrow.warn .ic{background:var(--amber-bg);color:var(--amber)}.nrow.bad .ic{background:var(--red-bg);color:var(--red)}.nrow.info .ic{background:var(--blue-bg);color:var(--blue)}
+.nrow b{display:block;font-family:var(--display);font-size:.88rem}.nrow span{font-size:.74rem;color:var(--muted);display:block}
+.nrow .chev{color:var(--muted)}
+.ck{width:30px;height:30px;border-radius:50%;border:2px solid var(--line);background:var(--surface);display:grid;place-items:center;color:transparent;flex:0 0 auto;padding:0}
+.ck svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.ck[aria-checked="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.jd{display:grid;grid-template-columns:30px 1fr auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line-soft);border-radius:16px;padding:12px;box-shadow:var(--shadow-1)}
+.jd.done{opacity:.6}.jd.done .t b{text-decoration:line-through}
+.jd.late{border-color:var(--red)}
+.jd .t{min-width:0;text-align:left;background:none;border:0;padding:0;color:var(--fg)}
+.jd .t b{display:block;font-family:var(--display);font-size:.9rem}.jd .t span{font-size:.74rem;color:var(--muted);display:block}
+.jd .when{font-family:var(--display);font-weight:700;font-size:.72rem;text-align:right;white-space:nowrap}
+.jd .when small{display:block;font-weight:500;color:var(--muted)}
+.rem{display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:center;background:var(--mint);border-radius:20px;padding:14px}
+.rem .ic{width:48px;height:48px;border-radius:14px;background:var(--accent);color:#fff;display:grid;place-items:center;position:relative}
+.rem .ic .pill{position:absolute;left:-10px;top:-12px;background:var(--amber-bg);color:var(--amber-fg);font-size:.6rem;padding:3px 7px;line-height:1.1;text-align:center;white-space:normal;max-width:60px}
+.rem b{font-family:var(--display);display:block;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.rem span{font-size:.76rem;color:var(--muted);display:block}
+.rem .t{min-width:0}
+.dg{background:var(--surface);border:1px solid var(--line-soft);border-radius:16px;box-shadow:var(--shadow-1);overflow:hidden}
+.dg summary{list-style:none;display:grid;grid-template-columns:40px 1fr auto;gap:10px;align-items:center;padding:12px;cursor:pointer}
+.dg summary::-webkit-details-marker{display:none}
+.dg summary .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--amber-bg);color:var(--amber)}
+.dg.pny summary .ic{background:var(--red-bg);color:var(--red)}
+.dg summary b{font-family:var(--display);display:block;font-size:.9rem}.dg summary span{font-size:.72rem;color:var(--muted);display:block}
+.dg .bd{padding:0 12px 12px;font-size:.82rem;display:flex;flex-direction:column;gap:8px}
+.dg .bd .lb{font-family:var(--display);font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);display:block;margin-bottom:2px}
+.dg .bd p{margin:0}
+.hbadge{display:inline-flex;align-items:center;gap:5px;font-family:var(--display);font-weight:800;font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(27,122,67,.85);padding:4px 9px;border-radius:999px}
+.hbadge.amber{background:rgba(230,138,20,.9)}.hbadge.red{background:rgba(201,68,46,.9)}
+.plot .ph .bl2{position:absolute;left:10px;bottom:38px}
+.plot .ph .hstp{position:absolute;left:10px;bottom:40px;font-size:.66rem;color:#fff;background:rgba(0,0,0,.35);padding:3px 8px;border-radius:999px;font-weight:600}
+.plot .foot .fi{display:inline-flex;align-items:center;gap:6px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.plot .foot .fi svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;flex:0 0 auto}
+.plot .foot .go{width:30px;height:30px;border-radius:50%;background:var(--mint);color:var(--accent);display:grid;place-items:center;flex:0 0 auto}
+.plot .foot .go svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round}
+.plot .pb .hp{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.stat3 .s.tap{cursor:pointer;border-color:var(--accent-2);position:relative}
+.stat3 .s.tap::after{content:"ubah";position:absolute;right:6px;top:4px;font-size:.56rem;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.lokres{display:flex;flex-direction:column;gap:6px}
+.lokres button{text-align:left;border:1px solid var(--line-soft);background:var(--surface);border-radius:12px;padding:10px 12px;color:var(--fg)}
+.lokres button b{display:block;font-family:var(--display);font-size:.88rem}.lokres button span{font-size:.72rem;color:var(--muted)}
+.seg.two{grid-template-columns:1fr 1fr}
+.plot .ph .ill{position:absolute;inset:0;width:100%;height:100%}
+.plot .ph .tl,#cwLoc{display:inline-block;max-width:60%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.5}
+.plot .ph .tl::before,#cwLoc::before{display:inline-block;margin-right:5px;vertical-align:1px}
+#cwUpd{flex:0 0 auto;font-size:.64rem}
+#cwUpd{flex:0 0 auto;padding:4px 9px}
+#cwLoc{max-width:54%}
+.plot .ph .tl.glass,.plot .ph .br.glass{background:rgba(0,0,0,.38)}
 </style>
 </head>
 <body>
@@ -360,7 +462,7 @@ nav.bottom button[aria-current="page"]{color:var(--accent);font-weight:700}
     <div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 20c0-9 5-14 14-14 0 9-5 14-14 14z"/><path d="M5 20c3-5 6-8 10-10"/></svg></div>
     <div class="brand-t"><span>Buku Usahatani</span><strong id="pageTitle">Beranda</strong></div>
   </div>
-  <div class="right"><button class="iconbtn" id="btnBack" type="button" hidden aria-label="Kembali"><svg class="i" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg></button><span class="pill dot" id="netPill">Siap</span><button class="avatar" id="topAvatar" type="button" data-go="atur" aria-label="Profil">BT</button></div>
+  <div class="right"><button class="iconbtn" id="btnBack" type="button" hidden aria-label="Kembali"><svg class="i" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg></button><button class="iconbtn bell" id="btnNotif" type="button" aria-label="Notifikasi"><svg class="i" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span class="dotb" id="notifDot" hidden></span></button><button class="avatar" id="topAvatar" type="button" data-go="atur" aria-label="Profil">BT</button></div>
 </header>
 
 <main>
@@ -369,19 +471,21 @@ nav.bottom button[aria-current="page"]{color:var(--accent);font-weight:700}
 <!-- ===== BERANDA ===== -->
 <section class="view" id="view-beranda">
   <div class="greet"><div><h2 id="greetTxt">Selamat pagi 🌱</h2><small id="greetSub">Semoga hasil panen berlimpah dan lahan tetap subur hari ini.</small></div><span class="pill shoot" id="greetPill">Musim —</span></div>
-  <div class="hero" id="heroBeranda">
-    <svg class="deco" viewBox="0 0 64 64"><path d="M4 50h56"/><path d="M8 50c4-10 10-16 24-16s20 6 24 16"/><path d="M32 34V14"/><path d="M32 22c-6-2-9-7-9-12 6 0 9 4 9 12zM32 22c6-2 9-7 9-12-6 0-9 4-9 12z"/></svg>
-    <div class="hrow"><span class="pill glass dot" id="heroLoc">Lahan</span><span class="pill glass" id="heroDate">—</span></div>
-    <div><div class="lbl">Kas usaha tani saat ini</div><div class="big num" id="saldoKas">Rp0</div></div>
-    <div class="hstats"><div><label>Musim berjalan</label><b id="hMusim">0</b></div><div><label>Luas dikelola</label><b id="hLuas">0 ha</b></div></div>
-    <div class="glass" id="heroTip"><svg class="i" viewBox="0 0 24 24" style="stroke:#fff"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.6 1 1.3 1 2.5h6c0-1.2.3-1.9 1-2.5A6 6 0 0 0 12 3z"/></svg><div><b>Mulai dari lahan</b><span id="heroTipTxt">Tambahkan petak lahan lalu buka musim tanam pertama.</span></div></div>
+  <div>
+    <div class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="cariGlobal" placeholder="Cari komoditas, diagnosa hama, atau biaya…" autocomplete="off"><button type="button" id="cariFilter" aria-label="Saring"><svg viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h2M10 12h10M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="7" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg></button></div>
+    <div class="cres" id="cariHasil" hidden></div>
+  </div>
+  <div class="hero cuaca" id="cuacaCard">
+    <div class="hrow"><span class="pill glass dot" id="cwLoc">Lokasi belum diatur</span><span class="pill glass" id="cwUpd">Cuaca</span></div>
+    <div id="cwBody"></div>
+    <div class="glass" id="cwTip"><svg class="i" viewBox="0 0 24 24" style="stroke:#fff"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.6 1 1.3 1 2.5h6c0-1.2.3-1.9 1-2.5A6 6 0 0 0 12 3z"/></svg><div><b id="cwTipT">Kondisi ideal</b><span id="cwTipTxt">—</span></div></div>
   </div>
   <div>
-    <div class="sec-h"><h3>Aksi cepat usahatani</h3><span class="hint">4 modul</span></div>
+    <div class="sec-h"><h3>Aksi cepat usahatani</h3><span class="hint">4 modul aktif</span></div>
     <div class="quick" style="margin-top:10px">
       <button type="button" data-go="catat" data-seg="out"><span class="tile"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-2-1.5L14 21l-2-1.5L10 21l-2-1.5L6 21z"/><path d="M9 8h6M9 12h6"/></svg></span>Catat Biaya</button>
       <button type="button" data-go="catat" data-seg="keg" data-keg="Panen"><span class="tile shoot"><svg viewBox="0 0 24 24"><path d="M12 21V9"/><path d="M12 13c-5 0-8-3-8-8 5 0 8 3 8 8zM12 13c5 0 8-3 8-8-5 0-8 3-8 8z"/></svg></span>Catat Panen</button>
-      <button type="button" data-go="catat" data-seg="keg"><span class="tile amber"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V9l6-5 6 5v11"/><path d="M10 20v-5h4v5"/></svg></span>Kegiatan Lahan</button>
+      <button type="button" data-go="diagnosa"><span class="tile amber"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="6"/><path d="M12 7V4M6 10l-3-1M18 10l3-1M6 16l-3 1M18 16l3 1M9 4l1 2M15 4l-1 2"/></svg></span>Diagnosa Hama</button>
       <button type="button" data-go="keuangan"><span class="tile blue"><svg viewBox="0 0 24 24"><path d="M4 18V6M4 18h16"/><path d="M7 14l4-5 3 3 5-6"/></svg></span>Analisis Laba</button>
     </div>
   </div>
@@ -395,6 +499,11 @@ nav.bottom button[aria-current="page"]{color:var(--accent);font-weight:700}
     <div class="card mint" style="margin-top:10px;padding:12px 14px" id="arusProy"></div>
   </div>
   <div>
+    <div class="sec-h"><h3>Tips &amp; rekomendasi ahli</h3><button class="link" data-go="artikel">Baca artikel →</button></div>
+    <div id="artUnggulan" style="margin-top:8px"></div>
+  </div>
+  <div class="peny"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></span><div><b>Penyuluh pertanian siaga</b><span id="penySub">Ada kendala hama mendadak? Hubungi tim lapangan.</span></div><button class="btn primary" type="button" id="btnKonsultasi">Konsultasi</button></div>
+  <div>
     <div class="sec-h"><h3>Catatan terakhir</h3><button class="link" data-go="keuangan" data-tab="transaksi">Lihat semua ›</button></div>
     <div class="list" id="recentList" style="margin-top:8px"></div>
   </div>
@@ -403,7 +512,7 @@ nav.bottom button[aria-current="page"]{color:var(--accent);font-weight:700}
 
 <!-- ===== CATAT ===== -->
 <section class="view" id="view-catat" hidden>
-  <div class="greet"><div><h2>Catat usahatani</h2><small>Buku kas lahan &amp; kegiatan operasional</small></div><span class="pill dot" id="catatPill">Tersimpan di HP</span></div>
+  <div class="greet"><div><h2>Catat usahatani</h2><small>Buku kas lahan &amp; kegiatan operasional</small></div><span class="pill dot" id="catatPill">Otomatis tersimpan</span></div>
   <form class="form" id="formTx" novalidate>
     <input type="hidden" id="txId"><input type="hidden" id="txKind" value="tx">
     <div class="seg" role="group" aria-label="Jenis catatan">
@@ -447,8 +556,9 @@ nav.bottom button[aria-current="page"]{color:var(--accent);font-weight:700}
   </div>
   <div class="stat3" id="lhStats"></div>
   <button class="btn primary block" type="button" id="btnMusimBaru"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Buka buku catatan &amp; musim baru</button>
-  <div class="chips scroll"><button type="button" class="chip" id="btnCsvLahan"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>Ekspor CSV</button><button type="button" class="chip" id="btnLahanBaru"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V10l7-6 7 6v10"/></svg>Tambah petak</button><button type="button" class="chip" data-go="keuangan"><svg viewBox="0 0 24 24"><path d="M4 18V6M4 18h16"/><path d="M7 14l4-5 3 3 5-6"/></svg>Analisis</button></div>
-  <div class="sec-h"><h3>Daftar petak</h3><span class="hint" id="lhCount"></span></div>
+  <div class="chips scroll"><button type="button" class="chip" id="btnEkspor"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>Ekspor Excel / PDF</button><button type="button" class="chip" data-go="jadwal"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20a6 6 0 0 1 12 0M14 20a4.5 4.5 0 0 1 7-3.5"/></svg>Jadwal Buruh Tani</button><button type="button" class="chip" id="btnLahanBaru"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V10l7-6 7 6v10"/></svg>Tambah petak</button><button type="button" class="chip" data-go="keuangan" data-tab="transaksi" aria-label="Riwayat"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5M12 7v5l3 2"/></svg>Riwayat</button></div>
+  <div class="sec-h"><h3>Daftar petak aktif</h3><span class="hint" id="lhCount"></span></div>
+  <div class="chips scroll" id="grupFilter"></div>
   <div class="chips scroll" id="musimFilter"><button type="button" class="chip" data-f="berjalan" aria-pressed="true">Semua aktif</button><button type="button" class="chip" data-f="selesai">Selesai</button><button type="button" class="chip" data-f="">Semua</button></div>
   <div class="list" id="musimList"></div>
   <div class="tip" id="tipLahan"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.6 1 1.3 1 2.5h6c0-1.2.3-1.9 1-2.5A6 6 0 0 0 12 3z"/></svg></span><div><b>Kiat lapangan minggu ini</b><span id="tipLahanTxt"></span></div></div>
@@ -457,8 +567,8 @@ nav.bottom button[aria-current="page"]{color:var(--accent);font-weight:700}
 <!-- ===== DETAIL PETAK / MUSIM ===== -->
 <section class="view" id="view-detail" hidden>
   <div class="plot big" id="dHero" style="border:0">
-    <div class="ph"><span class="pat"></span><img id="dImg" alt="" hidden><span class="tl pill glass dot" id="dFase">Fase</span><button class="tr iconbtn" type="button" id="btnFotoLahan" aria-label="Ganti foto" style="background:rgba(255,255,255,.2);color:#fff;box-shadow:none;width:36px;height:36px"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="12" cy="12" r="3.5"/></svg></button><input type="file" id="lhFoto" accept="image/*" hidden>
-      <span class="bl" id="dTitle">Petak</span><span class="br pill" style="background:var(--surface);color:var(--fg)" id="dHari">Hari ke-0</span></div>
+    <div class="ph"><span class="pat"></span><img id="dImg" alt="" hidden><span class="tl pill glass dot" id="dFase">Fase</span><span class="tr" style="display:flex;gap:6px"><button class="iconbtn" type="button" id="btnPin" aria-label="Tandai" style="background:rgba(255,255,255,.2);color:#fff;box-shadow:none;width:36px;height:36px"><svg class="i" viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button><button class="iconbtn" type="button" id="btnFotoLahan" aria-label="Ganti foto" style="background:rgba(255,255,255,.2);color:#fff;box-shadow:none;width:36px;height:36px"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="12" cy="12" r="3.5"/></svg></button></span><input type="file" id="lhFoto" accept="image/*" hidden>
+      <span class="bl2 hbadge" id="dHealth">Sehat &amp; subur</span><span class="bl" id="dTitle">Petak</span><span class="br pill" style="background:var(--surface);color:var(--fg)" id="dHari">Hari ke-0</span></div>
     <div class="pb"><div class="row2"><div><b id="dKomoditas">Komoditas</b><div class="m" id="dSub"></div></div><span class="pill shoot" id="dStatus">Berjalan</span></div></div>
   </div>
   <div class="stat3" id="dStats"></div>
@@ -485,7 +595,9 @@ nav.bottom button[aria-current="page"]{color:var(--accent);font-weight:700}
   </div>
   <div id="dKas" hidden><div class="list" id="dTx"></div></div>
   <div id="dKeg" hidden><div class="tl" id="dTlFull"></div></div>
+  <div id="dRem"></div>
   <div class="btns" style="margin-top:4px"><button class="btn primary" type="button" data-go="catat" data-seg="keg" id="btnTambahKeg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Tambah catatan lahan ini</button></div>
+  <button class="btn tonal block" type="button" id="btnCetakMusim"><svg viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2"/><path d="M6 14h12v7H6z"/></svg>Cetak Buku Usahatani (PDF)</button>
   <div class="btns"><button class="btn tonal" type="button" id="btnUbahMusim">Ubah musim</button><button class="btn tonal" type="button" id="btnSelesai">Tandai selesai</button><button class="btn tonal" type="button" id="btnCsvMusim">Ekspor CSV</button></div>
   <button class="btn soft-danger block" type="button" id="btnHapusMusim">Hapus musim ini</button>
 </section>
@@ -503,7 +615,7 @@ nav.bottom button[aria-current="page"]{color:var(--accent);font-weight:700}
       <svg class="chart" id="chart2" viewBox="0 0 360 200" role="img" aria-label="Grafik usaha"></svg><div class="legend" id="legend2"></div><div class="dlist" id="legend3"></div></div>
     <div class="card"><div class="card-h"><h3>Perbandingan musim</h3></div><div class="tscroll"><table id="tblMusim"></table></div><div class="hint" style="margin-top:8px">R/C = pendapatan ÷ biaya (di atas 1 untung). BEP harga = biaya ÷ hasil panen. BEP hasil = biaya ÷ harga rata-rata.</div></div>
     <div class="card"><div class="card-h"><h3>Rincian per kategori</h3></div><div class="tscroll"><table id="tblKategori"></table></div></div>
-    <div class="card"><div class="card-h"><h3>Unduh dan cadangan data</h3></div><div class="form"><div class="btns"><button class="btn" type="button" id="btnCsv"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>Unduh CSV</button><button class="btn" type="button" id="btnBackup"><svg viewBox="0 0 24 24"><path d="M12 21V9M7 14l5-5 5 5"/><path d="M4 4h16"/></svg>Cadangkan (JSON)</button></div><div class="field"><label for="fileImport"><span>Pulihkan dari berkas cadangan</span></label><input type="file" id="fileImport" accept=".json,application/json"></div><div class="hint" id="storageInfo"></div></div></div>
+    <div class="card"><div class="card-h"><h3>Unduh dan cadangan data</h3></div><div class="form"><div class="btns"><button class="btn" type="button" id="btnCsv"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>Unduh CSV</button><button class="btn" type="button" id="btnCetakSemua"><svg viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2"/><path d="M6 14h12v7H6z"/></svg>Cetak PDF</button><button class="btn" type="button" id="btnBackup"><svg viewBox="0 0 24 24"><path d="M12 21V9M7 14l5-5 5 5"/><path d="M4 4h16"/></svg>Cadangkan (JSON)</button></div><div class="field"><label for="fileImport"><span>Pulihkan dari berkas cadangan</span></label><input type="file" id="fileImport" accept=".json,application/json"></div><div class="hint" id="storageInfo"></div></div></div>
   </div>
   <div id="kTransaksi" hidden style="display:flex;flex-direction:column;gap:12px">
     <div class="chips scroll" id="fJenisChips"><button type="button" class="chip" data-f="" aria-pressed="true">Semua</button><button type="button" class="chip" data-f="out">Biaya</button><button type="button" class="chip" data-f="in">Pemasukan</button><button type="button" class="chip" data-f="panen">Panen</button><button type="button" class="chip" data-f="keg">Kegiatan</button></div>
@@ -528,10 +640,14 @@ nav.bottom button[aria-current="page"]{color:var(--accent);font-weight:700}
         <div class="field"><label for="sPoktan"><span>Kelompok tani / nama hamparan</span></label><input id="sPoktan" placeholder="mis. Poktan Tani Lestari"></div>
         <div class="field"><label for="sDesa"><span>Desa / kecamatan</span></label><input id="sDesa" placeholder="mis. Sumber Makmur, Mentaya Hilir Utara"></div>
         <div class="field"><label for="sSaldo"><span>Kas usaha tani saat mulai mencatat</span></label><input id="sSaldo" inputmode="numeric" placeholder="0"></div>
+        <div class="eyebrow">Penyuluh / pendamping</div>
+        <div class="grid2"><div class="field"><label for="sPenyNama"><span>Nama penyuluh (PPL)</span></label><input id="sPenyNama" placeholder="mis. Bu Rina, BPP Mentaya"></div><div class="field"><label for="sPenyWa"><span>Nomor WhatsApp</span></label><input id="sPenyWa" inputmode="tel" placeholder="mis. 081234567890"></div></div>
         <button class="btn primary block" type="submit">Simpan</button>
       </form>
     </div>
     <button class="mrow" type="button" data-sub="usaha"><span class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><span class="t"><b>Data petani</b><span>Nama, kelompok tani, desa, kas awal</span></span><span class="chev">›</span></button>
+    <button class="mrow" type="button" id="btnLokasi"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg></span><span class="t"><b>Lokasi cuaca</b><span id="lokasiSub">Belum diatur</span></span><span class="chev">›</span></button>
+    <button class="mrow" type="button" data-go="jadwal"><span class="ic"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span class="t"><b>Jadwal buruh tani</b><span id="jadwalSub">Rencana kegiatan &amp; pengingat</span></span><span class="chev">›</span></button>
     <button class="mrow" type="button" id="btnKelolaLahan"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M3 20h18M5 20V10l7-6 7 6v10"/></svg></span><span class="t"><b>Petak lahan &amp; kandang</b><span id="lahanSub">Belum ada</span></span><span class="chev">›</span></button>
     <div class="sub-form" id="sub-lahan" hidden><div id="lahanManage"></div><button class="btn tonal block" type="button" id="btnLahanBaru2" style="margin-top:8px">+ Tambah petak / kandang</button></div>
     <div class="eyebrow">Data &amp; sistem</div>
@@ -545,11 +661,38 @@ nav.bottom button[aria-current="page"]{color:var(--accent);font-weight:700}
       <div class="kv"><span class="l"><b>Fase tanaman</b><span>Pilih manual di data musim: persiapan, tanam, vegetatif, generatif/bunga, pengisian/pembuahan, panen. Dipakai sebagai penanda di kartu petak.</span></span></div>
       <div class="kv"><span class="l"><b>Proyeksi laba</b><span>Target hasil × harga pasar perkiraan − total biaya yang sudah tercatat. Hanya perkiraan sampai panen dan penjualan sungguhan dicatat.</span></span></div>
       <div class="kv"><span class="l"><b>R/C dan BEP</b><span>R/C = pendapatan ÷ biaya (di atas 1 untung). BEP harga = biaya ÷ hasil panen. BEP hasil = biaya ÷ harga rata-rata.</span></span></div>
+      <div class="kv"><span class="l"><b>Cuaca &amp; internet</b><span>Cuaca diambil dari layanan Open-Meteo saat ada internet dan disimpan untuk ditampilkan saat offline. Semua catatan pembukuan tetap tersimpan di HP.</span></span></div>
       <div class="kv"><span class="l"><b>Foto nota</b><span>Foto diperkecil otomatis (sekitar 40–80 KB) agar hemat ruang. Tetap sertakan dalam cadangan JSON.</span></span></div>
     </div>
     <button class="btn soft-danger block" type="button" id="btnHapusSemua" style="margin-top:6px">🗑 Hapus semua data</button>
   </div>
-  <div class="hint" style="text-align:center"><span class="pill gray">✓ 100% offline &amp; aman</span><br><br>Buku Tani · Versi 2.0 · <span id="aboutN">0</span> catatan · <span id="aboutInstall">—</span></div>
+  <div class="hint" style="text-align:center"><span class="pill gray">✓ Data di HP · cuaca daring</span><br><br>Buku Tani · Versi 2.1 · <span id="aboutN">0</span> catatan · <span id="aboutInstall">—</span></div>
+</section>
+
+<!-- ===== JADWAL BURUH TANI ===== -->
+<section class="view" id="view-jadwal" hidden>
+  <div class="greet"><div><h2>Jadwal buruh tani</h2><small>Rencana kegiatan lapangan, tenaga kerja, dan pengingat</small></div><span class="pill shoot" id="jdCount">0</span></div>
+  <button class="btn primary block" type="button" id="btnJadwalBaru"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Tambah jadwal kegiatan</button>
+  <div class="chips scroll" id="jdFilter"><button type="button" class="chip" data-f="aktif" aria-pressed="true">Akan datang</button><button type="button" class="chip" data-f="selesai">Selesai</button><button type="button" class="chip" data-f="">Semua</button></div>
+  <div class="list" id="jdList"></div>
+  <div class="tip"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.6 1 1.3 1 2.5h6c0-1.2.3-1.9 1-2.5A6 6 0 0 0 12 3z"/></svg></span><div><b>Cara pakai</b><span>Jadwalkan pemupukan, penyemprotan, atau panen beserta jumlah buruh. Pengingat muncul di Beranda dan lonceng notifikasi. Setelah dikerjakan, centang lalu catat sebagai kegiatan dan biaya upahnya.</span></div></div>
+</section>
+
+<!-- ===== DIAGNOSA HAMA ===== -->
+<section class="view" id="view-diagnosa" hidden>
+  <div class="greet"><div><h2>Diagnosa hama &amp; penyakit</h2><small>Cocokkan gejala di lapangan, lihat cara pengendalian</small></div></div>
+  <div class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="dgCari" placeholder="Ketik gejala: daun menguning, bercak, berlubang…" autocomplete="off"></div>
+  <div class="chips scroll" id="dgKom"></div>
+  <div class="list" id="dgList"></div>
+  <div class="tip amber"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M12 3 2 21h20z"/><path d="M12 10v5M12 18h.01"/></svg></span><div><b>Catatan</b><span>Panduan umum untuk pengamatan awal, bukan pengganti rekomendasi penyuluh/POPT setempat. Ikuti dosis dan petunjuk pada label produk, utamakan pengendalian terpadu (PHT).</span></div></div>
+  <div class="peny"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></span><div><b>Masih ragu?</b><span>Kirim foto gejala ke penyuluh.</span></div><button class="btn primary" type="button" data-konsul="diagnosa">Konsultasi</button></div>
+</section>
+
+<!-- ===== ARTIKEL ===== -->
+<section class="view" id="view-artikel" hidden>
+  <div class="greet"><div><h2>Tips &amp; rekomendasi ahli</h2><small>Bacaan singkat praktik budidaya dan pembukuan</small></div></div>
+  <div class="chips scroll" id="artTag"></div>
+  <div class="list" id="artList"></div>
 </section>
 
 </div>
@@ -590,12 +733,37 @@ nav.bottom button[aria-current="page"]{color:var(--accent);font-weight:700}
   <div class="grid2"><div class="field"><label for="msMulai"><span>Tanggal tanam / mulai</span></label><input type="date" id="msMulai"></div><div class="field"><label for="msEst"><span>Perkiraan panen</span></label><input type="date" id="msEst"></div></div>
   <div class="grid2"><div class="field"><label for="msFase"><span>Fase saat ini</span></label><select id="msFase"><option>Persiapan lahan</option><option>Tanam</option><option>Vegetatif</option><option>Generatif / berbunga</option><option>Pengisian / pembuahan</option><option>Panen</option><option>Pasca panen</option></select></div><div class="field"><label for="msSatuan"><span>Satuan hasil</span></label><select id="msSatuan"><option>kg</option><option>ton</option><option>ekor</option><option>ikat</option><option>tandan</option><option>butir</option><option>liter</option></select></div></div>
   <div class="grid2"><div class="field"><label for="msTarget"><span>Target hasil</span></label><input id="msTarget" inputmode="decimal" placeholder="mis. 2500"></div><div class="field"><label for="msHarga"><span>Harga pasar perkiraan /satuan</span></label><input id="msHarga" inputmode="numeric" placeholder="mis. 6500"></div></div>
+  <div class="grid2"><div class="field"><label for="msKondisi"><span>Kondisi tanaman / ternak</span></label><select id="msKondisi"><option>Sehat & subur</option><option>Perlu perhatian</option><option>Terserang hama / penyakit</option><option>Siap panen</option></select></div><div class="field"><label for="msAir"><span>Kondisi air / pakan</span></label><select id="msAir"><option>Cukup (macak-macak)</option><option>Kering</option><option>Lembap</option><option>Tergenang</option><option>Irigasi lancar</option><option>Pakan cukup</option><option>Perlu tambahan</option></select></div></div>
   <div class="field"><label for="msAnggaran"><span>Rencana biaya / plafon anggaran (opsional)</span></label><input id="msAnggaran" inputmode="numeric" placeholder="0"></div>
   <div class="btns"><button class="btn" type="button" id="msBatal">Batal</button><button class="btn primary" type="button" id="msSimpan">Simpan</button></div>
 </div></div>
 <div class="overlay" id="ovLunas" hidden><div class="sheet" role="dialog" aria-modal="true"><h3>Tandai lunas</h3><div id="lunasBody" class="hint" style="color:var(--fg)"></div>
   <div class="grid2"><div class="field"><label for="lnMetode"><span>Dibayar dengan</span></label><select id="lnMetode"><option>Tunai</option><option>Transfer bank</option><option>QRIS</option></select></div><div class="field"><label for="lnTanggal"><span>Tanggal bayar</span></label><input type="date" id="lnTanggal"></div></div>
   <div class="btns"><button class="btn" type="button" id="lnBatal">Batal</button><button class="btn primary" type="button" id="lnYa">Lunas</button></div></div></div>
+<div class="overlay" id="ovNotif" hidden><div class="sheet" role="dialog" aria-modal="true"><div class="sh"><h3>Notifikasi &amp; pengingat</h3><p id="notifSub">—</p></div><div id="notifList"></div><div class="btns"><button class="btn" type="button" id="notifTutup">Tutup</button></div></div></div>
+<div class="overlay" id="ovJadwal" hidden><div class="sheet" role="dialog" aria-modal="true">
+  <h3 id="jdTitle">Jadwal kegiatan</h3><input type="hidden" id="jdId">
+  <div class="field"><label for="jdMusim"><span>Petak lahan / musim</span></label><select id="jdMusim"></select></div>
+  <div class="grid2"><div class="field"><label for="jdTgl"><span>Tanggal rencana</span></label><input type="date" id="jdTgl"></div><div class="field"><label for="jdJenis"><span>Jenis kegiatan</span></label><select id="jdJenis"></select></div></div>
+  <div class="field"><label for="jdJudul"><span>Nama kegiatan</span></label><input id="jdJudul" placeholder="mis. Pemupukan NPK susulan ke-2"></div>
+  <div class="grid2"><div class="field"><label for="jdOrang"><span>Jumlah buruh (orang)</span></label><input id="jdOrang" inputmode="numeric" placeholder="mis. 4"></div><div class="field"><label for="jdUpah"><span>Upah per orang (Rp)</span></label><input id="jdUpah" inputmode="numeric" placeholder="mis. 75.000"></div></div>
+  <div class="field"><label for="jdCatatan"><span>Catatan</span></label><textarea id="jdCatatan" placeholder="Bahan yang disiapkan, nama buruh, dsb."></textarea></div>
+  <div class="btns"><button class="btn" type="button" id="jdBatal">Batal</button><button class="btn danger" type="button" id="jdHapus" hidden>Hapus</button><button class="btn primary" type="button" id="jdSimpan">Simpan</button></div>
+</div></div>
+<div class="overlay" id="ovLokasi" hidden><div class="sheet" role="dialog" aria-modal="true">
+  <div class="sh"><h3>Lokasi cuaca</h3><p>Dipakai untuk kartu cuaca &amp; saran kondisi lapangan. Perlu internet.</p></div>
+  <button class="btn tonal block" type="button" id="btnGps"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="8"/></svg>Gunakan lokasi HP (GPS)</button>
+  <div class="field"><label for="lokCari"><span>Atau cari nama desa / kecamatan / kota</span></label><div class="unit"><input id="lokCari" placeholder="mis. Sampit"><button class="btn sm primary" type="button" id="lokCariBtn" style="flex:0 0 auto">Cari</button></div></div>
+  <div class="lokres" id="lokHasil"></div>
+  <div class="hint" id="lokStatus"></div>
+  <div class="btns"><button class="btn" type="button" id="lokTutup">Tutup</button><button class="btn danger" type="button" id="lokHapus">Hapus lokasi</button></div>
+</div></div>
+<div class="overlay" id="ovEkspor" hidden><div class="sheet" role="dialog" aria-modal="true"><div class="sh"><h3>Ekspor buku usahatani</h3><p>Pilih bentuk berkas.</p></div>
+  <button class="mrow" type="button" id="ekCsv"><span class="ic"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg></span><span class="t"><b>Excel (CSV)</b><span>Semua transaksi, panen, kegiatan · dibuka di Excel/Sheets</span></span><span class="chev">›</span></button>
+  <button class="mrow" type="button" id="ekPdf"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2"/><path d="M6 14h12v7H6z"/></svg></span><span class="t"><b>PDF (cetak)</b><span>Laporan rapi per musim: analisis, biaya, panen, kegiatan</span></span><span class="chev">›</span></button>
+  <button class="mrow" type="button" id="ekJson"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M12 21V9M7 14l5-5 5 5"/><path d="M4 4h16"/></svg></span><span class="t"><b>Cadangan (JSON)</b><span>Untuk dipulihkan di HP lain</span></span><span class="chev">›</span></button>
+  <div class="btns"><button class="btn" type="button" id="ekTutup">Tutup</button></div></div></div>
+<div class="overlay" id="ovBaca" hidden><div class="sheet" role="dialog" aria-modal="true"><div id="bacaBody" class="baca"></div><div class="btns"><button class="btn" type="button" id="bacaTutup">Tutup</button><button class="btn primary" type="button" id="bacaBagikan">Bagikan</button></div></div></div>
 <div class="lightbox" id="lightbox" hidden><img id="lightImg" alt="Foto"></div>
 <div class="toast" id="toast" hidden></div>
 
@@ -617,8 +785,8 @@ const TIPS=['Catat belanja saprodi di hari yang sama, selagi nota masih ada. Fot
 const TIPS_LAHAN=['Setelah hujan deras, periksa drainase petak agar genangan tidak lebih dari sehari.','Catat gejala hama saat pertama terlihat; pengendalian dini jauh lebih murah daripada penyemprotan total.','Pemupukan susulan lebih efektif saat tanah lembap, bukan tergenang.','Sebelum panen, siapkan karung dan timbangan; catat hasil timbang per petak agar produktivitas per hektar terlihat.'];
 
 let S=load();
-function blank(){return {atur:{nama:'',poktan:'',desa:'',saldoAwal:0},lahan:[],musim:[],tx:[],panen:[],keg:[],mulai:false};}
-function load(){try{const r=localStorage.getItem(KEY);if(r){const o=JSON.parse(r);const st=Object.assign(blank(),o);['lahan','musim','tx','panen','keg'].forEach(k=>st[k]=st[k]||[]);return st;}}catch(e){}return blank();}
+function blank(){return {atur:{nama:'',poktan:'',desa:'',saldoAwal:0,penyNama:'',penyWa:'',lokasi:null},lahan:[],musim:[],tx:[],panen:[],keg:[],jadwal:[],mulai:false};}
+function load(){try{const r=localStorage.getItem(KEY);if(r){const o=JSON.parse(r);const st=Object.assign(blank(),o);['lahan','musim','tx','panen','keg','jadwal'].forEach(k=>st[k]=st[k]||[]);st.atur=Object.assign(blank().atur,st.atur||{});return st;}}catch(e){}return blank();}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){toast('Penyimpanan HP penuh. Hapus beberapa foto nota atau buat cadangan.');}}
 function storageKB(){try{return Math.round((localStorage.getItem(KEY)||'').length/1024);}catch(e){return 0;}}
 
@@ -657,20 +825,21 @@ const CATCOL={'Benih & bibit':'#1b7a43','Pupuk':'#50a66c','Pestisida / obat':'#c
 const PAL=['#1b7a43','#50a66c','#e68a14','#2a7bd1','#c9442e','#7c5cd1','#17a2a0','#b08a1e','#8a5200','#6b7a70','#9aa8a0'];
 
 // ===== Navigasi =====
-const VIEWS=['beranda','catat','lahan','detail','keuangan','atur'];
-const TITLES={beranda:'Beranda',catat:'Input catatan',lahan:'Catatan lahan',detail:'Detail petak lahan',keuangan:'Keuangan',atur:'Profil'};
+const VIEWS=['beranda','catat','lahan','detail','keuangan','atur','jadwal','diagnosa','artikel'];
+const TITLES={beranda:'Beranda',catat:'Input catatan',lahan:'Catatan lahan',detail:'Detail petak lahan',keuangan:'Keuangan',atur:'Profil',jadwal:'Jadwal buruh tani',diagnosa:'Diagnosa hama',artikel:'Tips & rekomendasi'};
+const SUBVIEWS=['detail','catat','jadwal','diagnosa','artikel'];let hist=[];
 let cur='beranda',fJenis='',detailId=null,kTab='analisis',dTab='ringkasan';
-function go(v){cur=v;VIEWS.forEach(x=>$('view-'+x).hidden=(x!==v));$('pageTitle').textContent=TITLES[v]||'';$('btnBack').hidden=!(v==='detail'||v==='catat');$('fab').hidden=(v==='catat'||v==='beranda');
+function go(v,back){if(v!==cur&&!back){if(SUBVIEWS.includes(v)){if(!SUBVIEWS.includes(cur))hist=[cur];else{const i=hist.indexOf(v);if(i>=0)hist.length=i;else hist.push(cur);}}else hist=[];}cur=v;VIEWS.forEach(x=>$('view-'+x).hidden=(x!==v));$('pageTitle').textContent=TITLES[v]||'';$('btnBack').hidden=!SUBVIEWS.includes(v);$('fab').hidden=(v==='catat'||v==='beranda'||v==='detail'||v==='diagnosa'||v==='artikel');
   document.querySelectorAll('nav.bottom button').forEach(b=>b.setAttribute('aria-current',b.dataset.go===v?'page':'false'));document.querySelector('main').scrollTop=0;
-  if(v==='beranda')renderBeranda();if(v==='lahan')renderLahan();if(v==='detail')renderDetail();if(v==='keuangan')renderKeuangan();if(v==='atur')renderAtur();
+  if(v==='beranda')renderBeranda();if(v==='lahan')renderLahan();if(v==='detail')renderDetail();if(v==='keuangan')renderKeuangan();if(v==='atur')renderAtur();if(v==='jadwal')renderJadwal();if(v==='diagnosa')renderDiagnosa();if(v==='artikel')renderArtikel();notifDot();
   try{localStorage.setItem(KEY+'.view',v);}catch(e){}}
-$('btnBack').onclick=()=>go(cur==='detail'?'lahan':(detailId&&cur==='catat'?'detail':'beranda'));
+$('btnBack').onclick=()=>{const p=hist.pop();if(p&&p!==cur)go(p,true);else go(cur==='detail'?'lahan':'beranda',true);};
 document.addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(!b)return;
   if(b.dataset.go==='catat'){resetForm();if(b.dataset.seg)setJenis(b.dataset.seg);if(b.dataset.keg)setKeg(b.dataset.keg);if(cur==='detail'&&detailId){$('txMusim').value=detailId;musimNote();}go('catat');return;}
   if(b.dataset.tab){kTab=b.dataset.tab;}go(b.dataset.go);});
 document.addEventListener('click',e=>{const b=e.target.closest('[data-sub]');if(!b)return;const el=$('sub-'+b.dataset.sub);if(!el)return;el.hidden=!el.hidden;if(!el.hidden)el.scrollIntoView({block:'nearest',behavior:'smooth'});});
-function net(){const p=$('netPill');if(navigator.onLine){p.textContent='Siap';p.classList.remove('off');}else{p.textContent='Offline';p.classList.add('off');}}
-window.addEventListener('online',net);window.addEventListener('offline',net);net();
+function net(){const p=$('catatPill');if(navigator.onLine){p.textContent='Otomatis tersimpan';p.classList.remove('off');}else{p.textContent='Offline · tersimpan di HP';p.classList.add('off');}}
+window.addEventListener('online',()=>{net();if(typeof cuacaRefresh==='function')cuacaRefresh(false);});window.addEventListener('offline',net);net();
 document.addEventListener('click',e=>{const im=e.target.closest('[data-light]');if(im){$('lightImg').src=im.dataset.light;$('lightbox').hidden=false;}});
 $('lightbox').onclick=()=>$('lightbox').hidden=true;
 
@@ -765,20 +934,21 @@ function hapusTx(id){const t=S.tx.find(x=>x.id===id);confirmBox('Hapus catatan?'
 
 // ===== Kartu petak =====
 function plotCard(m,compact){const a=analisa(m);const l=lahanOf(m.lahanId);const pct=a.total?Math.min(100,Math.round(a.hari/a.total*100)):(m.target?Math.min(100,Math.round(a.hasil/m.target*100)):0);
-  const top=Object.entries(a.byKat).sort((x,y)=>y[1]-x[1]).slice(0,3).map(x=>x[0]).join(', ');const lastK=a.kegs.sort((x,y)=>y.tgl.localeCompare(x.tgl))[0];
-  const warn=m.anggaran&&a.biaya>m.anggaran?'Biaya melebihi anggaran':(a.total&&a.hari>=a.total&&m.status!=='selesai'?'Sudah waktunya panen':null);
-  const status=m.status==='selesai'?['gray','Selesai']:warn?['amber','⚠ '+warn]:a.hari<7?['shoot','Baru tanam']:['shoot','✓ Berjalan'];
-  const ph='<div class="ph">'+(l&&l.foto?'<img src="'+l.foto+'" alt="">':'<span class="pat"></span>')+'<span class="tl pill glass">'+a.hari+' HST</span><span class="tr pill '+status[0]+'">'+status[1]+'</span><span class="bl">'+esc(l?l.nama:m.komoditas)+'</span>'+(l&&l.luas?'<span class="br pill glass">'+fq(l.luas/10000)+' ha</span>':'')+'</div>';
-  if(compact){return '<button type="button" class="plot" data-detail="'+m.id+'">'+ph+'<div class="pb"><div class="row2"><div><b>'+esc(m.komoditas)+(m.varietas?' '+esc(m.varietas):'')+'</b><div class="m">Fase '+esc(m.fase||'—')+'</div></div></div><div class="prog"><span>Progres musim</span><b>'+pct+'%'+(a.total?' ('+Math.max(0,a.total-a.hari)+' hari lagi)':'')+'</b></div><div class="bar'+(warn?' amber':'')+'"><i style="width:'+pct+'%"></i></div><div class="foot"><span>'+(lastK?esc(lastK.jenisKeg)+' · '+relDay(lastK.tgl):'Belum ada kegiatan')+'</span><b>→</b></div></div></button>';}
-  return '<button type="button" class="plot big" data-detail="'+m.id+'">'+ph+'<div class="pb"><div class="kv2"><div><label>Komoditas &amp; varietas</label><b>🌾 '+esc(m.komoditas)+(m.varietas?' '+esc(m.varietas):'')+'</b></div><div><label>Luas &amp; fase</label><b>'+(l&&l.luas?fq(l.luas/10000)+' ha · ':'')+esc(m.fase||'—')+'</b></div></div>'
+  const top=Object.entries(a.byKat).sort((x,y)=>y[1]-x[1]).slice(0,3).map(x=>x[0]).join(', ');const lastK=[...a.kegs].sort((x,y)=>y.tgl.localeCompare(x.tgl))[0];const nj=nextJadwal(m.id);const h=healthOf(m,a);
+  const img=l&&l.foto?'<img src="'+l.foto+'" alt="">':plotIll(l?l.jenis:'sawah',m.komoditas);
+  const footTxt=nj?(nj.tgl<today()?'Terlewat: ':'Jadwal: ')+esc(nj.judul)+' · '+relDays(nj.tgl):a.hasil?'Panen '+fq(a.hasil)+' '+esc(m.satuan)+(a.prod?' · '+fq(Math.round(a.prod))+'/ha':''):lastK?esc(lastK.judul||lastK.jenisKeg)+' · '+relDay(lastK.tgl):'Belum ada kegiatan tercatat';
+  const footIc=nj?(/pupuk/i.test(nj.jenisKeg)?'sack':/semprot/i.test(nj.jenisKeg)?'spray':/air/i.test(nj.jenisKeg)?'water':/panen/i.test(nj.jenisKeg)?'harvest':'cal'):a.hasil?'harvest':lastK?iconOf(lastK.jenisKeg,KEG):'cal';
+  if(compact){return '<button type="button" class="plot" data-detail="'+m.id+'"><div class="ph">'+img+'<span class="tl pill glass dot">'+esc(l?l.nama:m.komoditas)+(l&&l.luas?' · '+fq(l.luas/10000)+' Ha':'')+'</span><span class="br pill" style="background:var(--surface);color:var(--fg)">'+a.hari+' HST</span></div>'
+    +'<div class="pb"><div class="hp"><b>'+esc(m.komoditas)+(m.varietas?' '+esc(m.varietas):'')+'</b><span class="pill '+h.cls+'">'+h.short+'</span></div><div class="m">Fase '+esc(m.fase||'—')+'</div><div class="prog"><span>Progres musim</span><b>'+pct+'%'+(a.total?' ('+Math.max(0,a.total-a.hari)+' hari lagi)':'')+'</b></div><div class="bar'+(h.cls==='amber'||h.cls==='red'?' amber':'')+'"><i style="width:'+pct+'%"></i></div><div class="foot"><span class="fi" style="color:'+(nj&&nj.tgl<today()?'var(--red)':'var(--fg)')+'">'+svgI(footIc)+footTxt+'</span><span class="go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></div></button>';}
+  return '<button type="button" class="plot big" data-detail="'+m.id+'"><div class="ph">'+img+'<span class="tr hbadge '+h.cls+'">'+h.icon+' '+esc(h.label)+'</span><span class="hstp">'+a.hari+' Hari Setelah Tanam (HST)</span><span class="bl">'+esc(l?l.nama:m.komoditas)+'</span></div><div class="pb"><div class="kv2"><div><label>Komoditas &amp; varietas</label><b>'+svgI(grupIcon(m.komoditas)).replace('<svg','<svg style="width:16px;height:16px;vertical-align:-3px;stroke:var(--accent);fill:none;stroke-width:2"')+' '+esc(m.komoditas)+(m.varietas?' ('+esc(m.varietas)+')':'')+'</b></div><div><label>Luas &amp; fase</label><b>'+(l&&l.luas?fq(l.luas/10000)+' Ha · ':'')+esc(m.fase||'—')+'</b></div></div>'
     +'<div class="cost"><div class="r"><span>▣ Pengeluaran tercatat:</span><b class="num">'+rp(a.biaya)+'</b></div><span class="alo">Alokasi: '+esc(top||'belum ada biaya')+'</span></div>'
-    +'<div class="foot"><span>'+(a.hasil?'● Panen '+fq(a.hasil)+' '+esc(m.satuan)+(a.prod?' · '+fq(Math.round(a.prod))+'/ha':''):lastK?'● '+esc(lastK.judul||lastK.jenisKeg)+' · '+relDay(lastK.tgl):'● Belum ada kegiatan tercatat')+'</span><b>Buka catatan ›</b></div></div></button>';}
+    +'<div class="foot"><span class="fi" style="color:'+(nj&&nj.tgl<today()?'var(--red)':h.cls==='amber'?'var(--amber-fg)':'var(--accent)')+'">'+svgI(footIc)+(h.note?esc(h.note):footTxt)+'</span><b>Buka catatan ›</b></div></div></button>';}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-detail]');if(!b)return;detailId=b.dataset.detail;dTab='ringkasan';go('detail');});
 
 // ===== Beranda =====
 function renderBeranda(){const h=new Date().getHours();const sapa=h<11?'Selamat pagi':h<15?'Selamat siang':h<18?'Selamat sore':'Selamat malam';$('greetTxt').textContent=sapa+(S.atur.nama?', '+S.atur.nama.split(' ').slice(0,2).join(' '):'')+' 🌱';
-  $('topAvatar').textContent=initials(S.atur.nama);const berj=S.musim.filter(x=>x.status!=='selesai');$('greetPill').textContent=berj.length?berj.length+' musim aktif':'Belum ada musim';
-  $('saldoKas').textContent=rps(saldo());$('heroLoc').textContent=S.atur.poktan||S.atur.desa||'Lahan saya';$('heroDate').textContent=fmtTglHari(today());$('hMusim').textContent=berj.length;const ha=S.lahan.reduce((a,l)=>a+(l.luas||0),0)/10000;$('hLuas').textContent=fq(ha)+' ha';
+  $('topAvatar').textContent=initials(S.atur.nama);const berj=S.musim.filter(x=>x.status!=='selesai');const yr=String(new Date().getFullYear());const mt=S.musim.filter(m=>m.mulai.startsWith(yr)).length;$('greetPill').textContent=berj.length?'Musim Tanam '+(mt||berj.length):'Belum ada musim';
+  cuacaRender();$('artUnggulan').innerHTML=artCard(pilihArtikel(),false);$('penySub').textContent=S.atur.penyWa?'Ada kendala hama mendadak? Hubungi '+(S.atur.penyNama||'penyuluh')+' via WhatsApp.':'Ada kendala hama mendadak? Atur nomor WhatsApp penyuluh di Profil.';
   let tipT='Mulai dari lahan',tipB='Tambahkan petak lahan lalu buka musim tanam pertama.';
   const due=berj.map(m=>({m,a:analisa(m)})).filter(x=>x.a.total&&x.a.total-x.a.hari<=14).sort((x,y)=>(x.a.total-x.a.hari)-(y.a.total-y.a.hari))[0];
   const hu=hutangPerPihak('out'),pi=hutangPerPihak('in');const hs=hu.reduce((a,[,v])=>a+v.s,0),ps=pi.reduce((a,[,v])=>a+v.s,0);
@@ -786,7 +956,7 @@ function renderBeranda(){const h=new Date().getHours();const sapa=h<11?'Selamat 
   else if(hs){tipT='Utang kios '+rp(hs);tipB='Ada tagihan ke '+hu.length+' kios/pemasok belum dibayar. Lunasi di menu Keuangan → Belum dibayar.';}
   else if(ps){tipT='Piutang '+rp(ps);tipB=pi.length+' pembeli belum membayar hasil panen. Tandai lunas setelah uang diterima.';}
   else if(berj.length){const m=berj[0];const a=analisa(m);tipT='Kondisi '+m.komoditas+': HST '+a.hari;tipB='Fase '+(m.fase||'—')+'. Catat pemupukan, penyiangan, atau pengamatan hama hari ini agar riwayat lahan lengkap.';}
-  $('heroTip').querySelector('b').textContent=tipT;$('heroTipTxt').textContent=tipB;
+  $('greetSub').textContent=berj.length?tipT+'. '+tipB:'Semoga hasil panen berlimpah dan lahan tetap subur hari ini.';
   $('aktifSub').textContent=berj.length?berj.length+' komoditas dalam periode rawat':'Belum ada musim berjalan';
   $('musimBerjalan').innerHTML=berj.length?berj.map(m=>plotCard(m,true)).join(''):'<div class="card" style="flex:1"><div class="empty">Belum ada musim berjalan. Buka menu <b>Lahan</b> lalu ketuk <b>Buka buku catatan &amp; musim baru</b>.</div></div>';
   const ag=berj.reduce((acc,m)=>{const a=analisa(m);acc.b+=a.biaya;acc.o+=a.omzetEst;acc.p+=a.pend;acc.k=Object.assign(acc.k,{});Object.entries(a.byKat).forEach(([k,v])=>acc.k[k]=(acc.k[k]||0)+v);return acc;},{b:0,o:0,p:0,k:{}});
@@ -794,20 +964,23 @@ function renderBeranda(){const h=new Date().getHours();const sapa=h<11?'Selamat 
   $('arusKpi').innerHTML='<div class="k"><label>● Total biaya saprodi &amp; upah</label><b class="num" style="color:var(--out)">'+rpj(ag.b)+'</b><small>Bibit, pupuk, upah, olah lahan</small></div><div class="k"><label>● Estimasi panen bruto</label><b class="num" style="color:var(--in)">'+(ag.o?rpj(ag.o):'—')+'</b><small>'+(ag.o?'Target hasil × harga pasar':'Isi target & harga di data musim')+'</small></div>';
   const proy=ag.o?ag.o-ag.b:null;const top=Object.entries(ag.k).sort((x,y)=>y[1]-x[1]).slice(0,3);
   $('arusProy').innerHTML='<div class="eyebrow">Proyeksi margin bersih</div><div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><b class="num" style="font-family:var(--display);font-size:1.3rem;color:'+(proy!==null&&proy<0?'var(--red)':'var(--accent)')+'">'+(proy===null?'—':(proy>=0?'+ ':'− ')+rpj(Math.abs(proy)))+'</b>'+(proy!==null&&ag.b?'<span class="pill '+(proy>=0?'shoot':'red')+'">'+(proy>=0?'↗ +':'↘ ')+Math.round(proy/ag.b*100)+'%</span>':'')+'</div>'
-    +(top.length?'<div class="hint" style="margin-top:8px">Alokasi modal: '+top.map(([k,v])=>esc(k)+' '+Math.round(v/ag.b*100)+'%').join(' · ')+'</div><div class="stack" style="margin-top:6px">'+top.map(([k,v])=>'<i style="width:'+(v/ag.b*100)+'%;background:'+(CATCOL[k]||'#9aa8a0')+'"></i>').join('')+'</div>':'<div class="hint" style="margin-top:6px">Belum ada biaya tercatat pada musim berjalan.</div>');
+    +'<div class="hint" style="margin-top:6px;display:flex;justify-content:space-between"><span>Saldo kas usaha tani</span><b class="num" style="color:var(--fg)">'+rps(saldo())+'</b></div>'+(top.length?'<div class="hint" style="margin-top:8px">Alokasi modal: '+top.map(([k,v])=>esc(k)+' '+Math.round(v/ag.b*100)+'%').join(' · ')+'</div><div class="stack" style="margin-top:6px">'+top.map(([k,v])=>'<i style="width:'+(v/ag.b*100)+'%;background:'+(CATCOL[k]||'#9aa8a0')+'"></i>').join('')+'</div>':'<div class="hint" style="margin-top:6px">Belum ada biaya tercatat pada musim berjalan.</div>');
   const rec=allRows().slice(0,5);$('recentList').innerHTML=rec.length?rec.map(t=>rowHtml(t,true)).join(''):'<div class="empty">Belum ada catatan. Ketuk tombol <b>+</b> untuk mulai.</div>';
   $('tipTxt').textContent=TIPS[new Date().getDate()%TIPS.length];}
 
 // ===== Lahan =====
-let musimF='berjalan';
+let musimF='berjalan',grupF='';
 function renderLahan(){$('lhNama').textContent=S.atur.poktan||'Lahan '+(S.atur.nama||'saya');$('lhDesa').textContent='📍 '+(S.atur.desa||'Lokasi belum diisi');const berj=S.musim.filter(m=>m.status!=='selesai');$('lhMusimPill').textContent=berj.length?'Musim tanam aktif ('+berj.length+')':'Belum ada musim aktif';
   const ha=S.lahan.reduce((a,l)=>a+(l.luas||0),0)/10000;const kom=new Set(berj.map(m=>m.komoditas)).size;const yr=new Date().getFullYear();
   $('lhStats').innerHTML='<div class="s"><span class="ic">'+svgI('land')+'</span><label>Luas lahan</label><b>'+fq(ha)+' <small>Ha</small></b></div><div class="s"><span class="ic">'+svgI('leaf')+'</span><label>Komoditas</label><b>'+kom+' <small>jenis</small></b></div><div class="s"><span class="ic">'+svgI('cal')+'</span><label>Periode</label><b>'+yr+' <small>MT '+(S.musim.filter(m=>m.mulai.startsWith(String(yr))).length||'—')+'</small></b></div>';
   document.querySelectorAll('#musimFilter .chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.f===musimF));
-  const list=S.musim.filter(m=>!musimF||(musimF==='selesai'?m.status==='selesai':m.status!=='selesai')).sort((a,b)=>b.mulai.localeCompare(a.mulai));$('lhCount').textContent=list.length+' terkelola';
+  const base=S.musim.filter(m=>!musimF||(musimF==='selesai'?m.status==='selesai':m.status!=='selesai'));const gs=[...new Set(base.map(m=>grup(m.komoditas)))];if(grupF&&!gs.includes(grupF))grupF='';
+  $('grupFilter').innerHTML='<button type="button" class="chip" data-g="" aria-pressed="'+(!grupF)+'">Semua Lahan</button>'+gs.map(g=>'<button type="button" class="chip" data-g="'+g+'" aria-pressed="'+(grupF===g)+'">'+g+'</button>').join('');
+  const list=base.filter(m=>!grupF||grup(m.komoditas)===grupF).sort((a,b)=>(b.pin?1:0)-(a.pin?1:0)||b.mulai.localeCompare(a.mulai));$('lhCount').textContent=list.length+' terkelola';
   $('musimList').innerHTML=list.length?list.map(m=>plotCard(m,false)).join(''):'<div class="card"><div class="empty">'+(S.lahan.length?'Belum ada musim pada saringan ini. Ketuk <b>Buka buku catatan &amp; musim baru</b>.':'Belum ada petak lahan. Ketuk <b>Tambah petak</b> dulu.')+'</div></div>';
   $('tipLahanTxt').textContent=TIPS_LAHAN[Math.floor(new Date().getDate()/7)%TIPS_LAHAN.length];}
 $('musimFilter').addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;musimF=c.dataset.f;renderLahan();});
+$('grupFilter').addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;grupF=c.dataset.g;renderLahan();});
 function openLahan(l){$('lahanTitle').textContent=l?'Ubah petak / kandang':'Tambah petak / kandang';$('lhId').value=l?l.id:'';$('lhNama').value=l?l.nama:'';$('lhLuas').value=l&&l.luas?l.luas:'';$('lhJenis').value=l?l.jenis:'sawah';$('lhHapus').hidden=!l;$('ovLahan').hidden=false;}
 $('btnLahanBaru').onclick=()=>openLahan(null);$('btnLahanBaru2').onclick=()=>openLahan(null);$('btnLahanKelola').onclick=()=>{go('atur');$('sub-lahan').hidden=false;};$('btnKelolaLahan').onclick=()=>{$('sub-lahan').hidden=!$('sub-lahan').hidden;};
 $('lhBatal').onclick=()=>$('ovLahan').hidden=true;
@@ -815,10 +988,10 @@ $('lhSimpan').onclick=()=>{const n=$('lhNama').value.trim();if(!n){toast('Isi na
 $('lhHapus').onclick=()=>{const id=$('lhId').value;if(S.musim.some(m=>m.lahanId===id)){toast('Petak masih dipakai musim. Hapus musimnya dulu.');return;}S.lahan=S.lahan.filter(x=>x.id!==id);save();$('ovLahan').hidden=true;go(cur);};
 document.addEventListener('click',e=>{const b=e.target.closest('[data-ledit]');if(b)openLahan(lahanOf(b.dataset.ledit));});
 function openMusim(m){if(!S.lahan.length){toast('Tambah petak lahan dulu.');openLahan(null);return;}$('musimTitle').textContent=m?'Ubah musim':'Mulai musim baru';$('msId').value=m?m.id:'';const sel=$('msLahan');sel.innerHTML='';S.lahan.forEach(l=>{const o=document.createElement('option');o.value=l.id;o.textContent=l.nama+(l.luas?' ('+fq(l.luas/10000)+' ha)':'');sel.appendChild(o);});
-  sel.value=m?m.lahanId:S.lahan[0].id;$('msKomoditas').value=m?m.komoditas:'';$('msVarietas').value=m?m.varietas||'':'';$('msSatuan').value=m?m.satuan:'kg';$('msMulai').value=m?m.mulai:today();$('msEst').value=m&&m.est?m.est:'';$('msFase').value=m&&m.fase?m.fase:'Tanam';$('msTarget').value=m&&m.target?fq(m.target):'';$('msHarga').value=m&&m.harga?m.harga.toLocaleString('id-ID'):'';$('msAnggaran').value=m&&m.anggaran?m.anggaran.toLocaleString('id-ID'):'';$('ovMusim').hidden=false;}
+  sel.value=m?m.lahanId:S.lahan[0].id;$('msKomoditas').value=m?m.komoditas:'';$('msVarietas').value=m?m.varietas||'':'';$('msSatuan').value=m?m.satuan:'kg';$('msMulai').value=m?m.mulai:today();$('msEst').value=m&&m.est?m.est:'';$('msFase').value=m&&m.fase?m.fase:'Tanam';$('msTarget').value=m&&m.target?fq(m.target):'';$('msHarga').value=m&&m.harga?m.harga.toLocaleString('id-ID'):'';$('msAnggaran').value=m&&m.anggaran?m.anggaran.toLocaleString('id-ID'):'';$('msKondisi').value=m&&m.kondisi?m.kondisi:'Sehat & subur';$('msAir').value=m&&m.air?m.air:'Cukup (macak-macak)';$('ovMusim').hidden=false;}
 $('msKomoditas').addEventListener('change',()=>{if($('msEst').value||!$('msMulai').value)return;const k=$('msKomoditas').value.toLowerCase();const d=/padi/.test(k)?110:/jagung/.test(k)?100:/kedelai/.test(k)?85:/cabai/.test(k)?120:/tomat/.test(k)?90:/bawang/.test(k)?65:/sayur/.test(k)?40:/singkong/.test(k)?270:/ayam pedaging/.test(k)?35:/lele|nila/.test(k)?90:/kambing|sapi/.test(k)?180:0;if(d)$('msEst').value=addDays($('msMulai').value,d);});
 $('btnMusimBaru').onclick=()=>openMusim(null);$('msBatal').onclick=()=>$('ovMusim').hidden=true;
-$('msSimpan').onclick=()=>{const k=$('msKomoditas').value.trim();if(!k){toast('Isi komoditas.');return;}const old=musimOf($('msId').value);const m={id:$('msId').value||uid(),lahanId:$('msLahan').value,komoditas:k,varietas:$('msVarietas').value.trim(),satuan:$('msSatuan').value,mulai:$('msMulai').value||today(),est:$('msEst').value||'',fase:$('msFase').value,target:dec($('msTarget').value)||0,harga:num($('msHarga').value)||0,anggaran:num($('msAnggaran').value)||0,status:old?old.status:'berjalan',selesai:old?old.selesai:undefined};
+$('msSimpan').onclick=()=>{const k=$('msKomoditas').value.trim();if(!k){toast('Isi komoditas.');return;}const old=musimOf($('msId').value);const m={id:$('msId').value||uid(),lahanId:$('msLahan').value,komoditas:k,varietas:$('msVarietas').value.trim(),satuan:$('msSatuan').value,mulai:$('msMulai').value||today(),est:$('msEst').value||'',fase:$('msFase').value,target:dec($('msTarget').value)||0,harga:num($('msHarga').value)||0,anggaran:num($('msAnggaran').value)||0,kondisi:$('msKondisi').value,air:$('msAir').value,status:old?old.status:'berjalan',selesai:old?old.selesai:undefined,pin:old?old.pin:false};
   const i=S.musim.findIndex(x=>x.id===m.id);if(i>=0)S.musim[i]=m;else S.musim.push(m);save();$('ovMusim').hidden=true;toast('Musim disimpan');if(cur==='detail')renderDetail();else{musimF=m.status==='selesai'?'selesai':'berjalan';go('lahan');}};
 
 // ===== Detail =====
@@ -828,8 +1001,9 @@ function tlHtml(list,limit){const ks=[...list].sort((a,b)=>b.tgl.localeCompare(a
 function renderDetail(){const m=musimOf(detailId);if(!m){go('lahan');return;}const a=analisa(m);const l=lahanOf(m.lahanId);
   $('dImg').hidden=!(l&&l.foto);if(l&&l.foto)$('dImg').src=l.foto;$('dFase').textContent='Fase '+(m.fase||'—');$('dTitle').textContent=l?l.nama:m.komoditas;$('dHari').textContent='Hari ke-'+a.hari+(a.total?'/'+a.total:'');
   $('dKomoditas').textContent='🌾 '+m.komoditas+(m.varietas?' · '+m.varietas:'');$('dSub').textContent=(l&&l.luas?fq(l.luas/10000)+' ha · ':'')+(l?JENIS_LAHAN[l.jenis]:'')+' · mulai '+fmtTgl(m.mulai);
-  $('dStatus').textContent=m.status==='selesai'?'Selesai':'Berjalan';$('dStatus').className='pill '+(m.status==='selesai'?'gray':'shoot');
-  $('dStats').innerHTML='<div class="s"><span class="ic">'+svgI('cal')+'</span><label>Tgl tanam</label><b style="font-size:.9rem">'+fmtTgl(m.mulai)+'</b></div><div class="s"><span class="ic">'+svgI('drop')+'</span><label>Fase</label><b style="font-size:.9rem">'+esc(m.fase||'—')+'</b></div><div class="s"><span class="ic">'+svgI('harvest')+'</span><label>'+(m.status==='selesai'?'Selesai':'Est. panen')+'</label><b style="font-size:.9rem;color:var(--amber-fg)">'+fmtTgl(m.status==='selesai'?m.selesai:m.est)+'</b></div>';
+  $('dStatus').textContent=m.status==='selesai'?'Selesai':'Berjalan';$('dStatus').className='pill '+(m.status==='selesai'?'gray':'shoot');const hh=healthOf(m,a);$('dHealth').innerHTML=hh.icon+' '+esc(hh.label);$('dHealth').className='bl2 hbadge '+hh.cls;$('btnPin').style.background=m.pin?'var(--amber)':'rgba(255,255,255,.2)';
+  const nj=nextJadwal(m.id);$('dRem').innerHTML=nj?'<div class="rem"><span class="ic"><span class="pill">'+relDays(nj.tgl)+'</span><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 3h6"/></svg></span><div class="t"><b>'+esc(nj.judul)+'</b><span>'+esc(nj.catatan||(nj.jenisKeg+(nj.orang?' · '+nj.orang+' buruh':'')))+'</span></div><button class="ck" type="button" data-jdone="'+nj.id+'" aria-checked="false" aria-label="Tandai selesai"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></button></div>':'<button class="rem" type="button" id="btnJadwalDetail" style="width:100%;text-align:left;border:0"><span class="ic" style="background:var(--surface);color:var(--accent)"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></svg></span><div class="t"><b>Belum ada jadwal kegiatan</b><span>Jadwalkan pemupukan, penyemprotan, atau panen beserta buruhnya.</span></div><span class="chev">›</span></button>';
+  $('dStats').innerHTML='<div class="s"><span class="ic">'+svgI('cal')+'</span><label>Tgl tanam</label><b style="font-size:.9rem">'+fmtTgl(m.mulai)+'</b></div><div class="s tap" id="dAirBtn"><span class="ic">'+svgI('drop')+'</span><label>'+(lahanOf(m.lahanId)&&/kandang|kolam/.test(lahanOf(m.lahanId).jenis)?'Kondisi pakan/air':'Kondisi air')+'</label><b style="font-size:.9rem;color:var(--accent)">'+esc(m.air||'Belum diisi')+'</b></div><div class="s"><span class="ic">'+svgI('harvest')+'</span><label>'+(m.status==='selesai'?'Selesai':'Est. panen')+'</label><b style="font-size:.9rem;color:var(--amber-fg)">'+fmtTgl(m.status==='selesai'?m.selesai:m.est)+'</b></div>';
   document.querySelectorAll('#dTabs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.t===dTab));$('dRingkasan').hidden=dTab!=='ringkasan';$('dKas').hidden=dTab!=='kas';$('dKeg').hidden=dTab!=='kegiatan';
   // proyeksi
   const real=a.pend>0;$('dProyTitle').firstChild.textContent=real?'Laba bersih tercatat':'Proyeksi laba bersih';$('dRoi').textContent=real?(a.bc!==null?'B/C '+fmtRc(a.bc):'—'):(a.roi!==null?'ROI '+(a.roi>=0?'+':'')+Math.round(a.roi)+'%':'ROI —');$('dRoi').className='pill '+((real?a.untung:a.proyUntung)<0?'red':'shoot');
@@ -846,11 +1020,13 @@ function renderDetail(){const m=musimOf(detailId);if(!m){go('lahan');return;}con
 $('dTabs').addEventListener('click',e=>{const b=e.target.closest('[data-t]');if(!b)return;dTab=b.dataset.t;renderDetail();});
 $('dRincian').onclick=()=>{dTab='kas';renderDetail();};
 $('btnFotoLahan').onclick=()=>$('lhFoto').click();
+$('btnPin').onclick=()=>{const m=musimOf(detailId);m.pin=!m.pin;save();renderDetail();toast(m.pin?'Ditandai: tampil paling atas':'Tanda dilepas');};
+document.addEventListener('click',e=>{if(e.target.closest('#dAirBtn')){const m=musimOf(detailId);const opts=[...$('msAir').options].map(o=>o.value);const i=opts.indexOf(m.air||'');m.air=opts[(i+1)%opts.length];save();renderDetail();toast('Kondisi air: '+m.air);}if(e.target.closest('#btnJadwalDetail')){openJadwal(null,detailId);}});
 $('lhFoto').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;const m=musimOf(detailId);const l=lahanOf(m.lahanId);if(!l)return;try{l.foto=await compressImage(f,1000,0.72);save();renderDetail();toast('Foto petak diperbarui');}catch(err){toast('Foto tidak bisa dibaca.');}e.target.value='';});
 $('btnUbahMusim').onclick=()=>openMusim(musimOf(detailId));
 $('btnSelesai').onclick=()=>{const m=musimOf(detailId);if(m.status==='selesai'){m.status='berjalan';m.selesai=undefined;save();renderDetail();return;}confirmBox('Tandai musim selesai?','Musim '+m.komoditas+' ditutup per hari ini. Catatan masih bisa ditambahkan dan musim bisa dibuka kembali.',()=>{m.status='selesai';m.selesai=today();m.fase='Pasca panen';save();renderDetail();});};
 $('btnHapusMusim').onclick=()=>{const m=musimOf(detailId);const n=S.tx.filter(t=>t.musimId===m.id).length;confirmBox('Hapus musim?',m.komoditas+' beserta '+n+' transaksi, panen, dan kegiatannya akan dihapus permanen.',()=>{S.musim=S.musim.filter(x=>x.id!==m.id);S.tx=S.tx.filter(t=>t.musimId!==m.id);S.panen=S.panen.filter(p=>p.musimId!==m.id);S.keg=S.keg.filter(k=>k.musimId!==m.id);save();go('lahan');});};
-$('btnCsvMusim').onclick=()=>exportCsv(detailId);
+$('btnCsvMusim').onclick=()=>exportCsv(detailId);$('btnCetakMusim').onclick=()=>cetak(detailId);
 
 // ===== Keuangan =====
 let chartMode='untung';
@@ -913,25 +1089,27 @@ function download(name,content,type){if(window.Android&&window.Android.saveFile)
 function exportCsv(musimId){const q=v=>'"'+String(v==null?'':v).replace(/"/g,'""')+'"';const head=['No','Tanggal','Jenis','Petak','Musim','Kategori / kegiatan','Rincian','Pihak','Jumlah','Satuan','Harga satuan','Pembayaran','Tanggal lunas','Pemasukan','Biaya','Panen','Tenaga kerja','Catatan','Ada foto'];
   const rows=allRows().filter(t=>!musimId||t.musimId===musimId).reverse().map((t,n)=>{const m=musimOf(t.musimId);const l=m?lahanOf(m.lahanId):null;const pn=t.jenis==='panen',kg=t.jenis==='keg';return [n+1,t.tgl,pn?'Panen':kg?'Kegiatan':t.jenis==='in'?'Pemasukan':'Biaya',l?l.nama:'',m?m.komoditas:'',kg?t.jenisKeg:pn?'':t.kat,kg?t.judul:(t.ket||''),pn||kg?'':(t.pihak||''),pn||kg?'':(t.qty||''),pn?(m?m.satuan:''):(kg?'':(t.qty?t.satuan:'')),pn||kg?'':(t.harga||''),pn||kg?'':t.metode,pn||kg?'':(t.tglLunas||''),!pn&&!kg&&t.jenis==='in'?t.jumlah:'',!pn&&!kg&&t.jenis==='out'?t.jumlah:'',pn?t.qty:'',kg&&t.orang?t.orang+' orang'+(t.jam?' × '+t.jam+' jam':''):'',t.catatan||'',t.foto?'ya':''].map(q).join(';');});
   download('bukutani_'+(musimId?musimOf(musimId).komoditas.replace(/\s+/g,'_')+'_':'')+today()+'.csv','﻿'+head.map(q).join(';')+'\n'+rows.join('\n'),'text/csv;charset=utf-8');}
-$('btnCsv').onclick=()=>exportCsv('');$('btnCsvLahan').onclick=()=>exportCsv('');
-$('btnBackup').onclick=()=>download('cadangan_bukutani_'+today()+'.json',JSON.stringify(Object.assign({versi:2,dibuat:new Date().toISOString()},S)),'application/json');
+$('btnCsv').onclick=()=>exportCsv('');$('btnCetakSemua').onclick=()=>cetak('');
+function backup(){download('cadangan_bukutani_'+today()+'.json',JSON.stringify(Object.assign({versi:3,dibuat:new Date().toISOString()},S)),'application/json');try{localStorage.setItem(KEY+'.backup',today());}catch(e){}}
+$('btnBackup').onclick=backup;
 $('fileImport').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const o=JSON.parse(r.result);if(!Array.isArray(o.tx)||!Array.isArray(o.musim))throw 0;
-  confirmBox('Pulihkan data?','Data di HP ini akan diganti dengan isi cadangan ('+o.musim.length+' musim, '+o.tx.length+' transaksi).',()=>{S=Object.assign(blank(),{atur:o.atur||{},lahan:o.lahan||[],musim:o.musim,tx:o.tx,panen:o.panen||[],keg:o.keg||[],mulai:true});save();toast('Data dipulihkan');go('beranda');});}catch(err){toast('Berkas bukan cadangan Buku Tani yang sah.');}e.target.value='';};r.readAsText(f);});
+  confirmBox('Pulihkan data?','Data di HP ini akan diganti dengan isi cadangan ('+o.musim.length+' musim, '+o.tx.length+' transaksi).',()=>{S=Object.assign(blank(),{atur:Object.assign(blank().atur,o.atur||{}),lahan:o.lahan||[],musim:o.musim,tx:o.tx,panen:o.panen||[],keg:o.keg||[],jadwal:o.jadwal||[],mulai:true});save();toast('Data dipulihkan');go('beranda');});}catch(err){toast('Berkas bukan cadangan Buku Tani yang sah.');}e.target.value='';};r.readAsText(f);});
 
 // ===== Profil =====
-function renderAtur(){$('sNama').value=S.atur.nama||'';$('sPoktan').value=S.atur.poktan||'';$('sDesa').value=S.atur.desa||'';$('sSaldo').value=S.atur.saldoAwal?S.atur.saldoAwal.toLocaleString('id-ID'):'';
+function renderAtur(){$('sNama').value=S.atur.nama||'';$('sPoktan').value=S.atur.poktan||'';$('sDesa').value=S.atur.desa||'';$('sSaldo').value=S.atur.saldoAwal?S.atur.saldoAwal.toLocaleString('id-ID'):'';$('sPenyNama').value=S.atur.penyNama||'';$('sPenyWa').value=S.atur.penyWa||'';$('lokasiSub').textContent=S.atur.lokasi?S.atur.lokasi.nama:'Belum diatur · ketuk untuk mengatur';const nj=S.jadwal.filter(j=>!j.done).length;$('jadwalSub').textContent=nj?nj+' jadwal akan datang':'Rencana kegiatan & pengingat';
   $('aturAvatar').textContent=initials(S.atur.nama);$('aturNama').textContent=S.atur.nama||'Nama petani belum diisi';$('aturPoktan').textContent=[S.atur.poktan,S.atur.desa].filter(Boolean).join(' · ');const ha=S.lahan.reduce((a,l)=>a+(l.luas||0),0)/10000;$('aturLuas').textContent=S.lahan.length+' petak · '+fq(ha)+' ha';$('lahanSub').textContent=S.lahan.map(l=>l.nama).join(', ')||'Belum ada petak';
   $('lahanManage').innerHTML=S.lahan.length?S.lahan.map(l=>'<div class="kv"><span class="l"><b>'+esc(l.nama)+'</b><span>'+(l.luas?fq(l.luas/10000)+' ha · ':'')+JENIS_LAHAN[l.jenis]+' · '+S.musim.filter(m=>m.lahanId===l.id).length+' musim</span></span><button class="btn sm" type="button" data-ledit="'+l.id+'">Ubah</button></div>').join(''):'<div class="hint">Belum ada petak.</div>';
   $('aboutN').textContent=S.tx.length+S.panen.length+S.keg.length;$('aboutInstall').textContent=window.matchMedia('(display-mode: standalone)').matches?'terpasang sebagai aplikasi':'dibuka di peramban';}
-$('formAtur').addEventListener('submit',e=>{e.preventDefault();S.atur={nama:$('sNama').value.trim(),poktan:$('sPoktan').value.trim(),desa:$('sDesa').value.trim(),saldoAwal:num($('sSaldo').value)};save();toast('Tersimpan');renderAtur();});
+$('formAtur').addEventListener('submit',e=>{e.preventDefault();Object.assign(S.atur,{nama:$('sNama').value.trim(),poktan:$('sPoktan').value.trim(),desa:$('sDesa').value.trim(),saldoAwal:num($('sSaldo').value),penyNama:$('sPenyNama').value.trim(),penyWa:$('sPenyWa').value.replace(/[^\d+]/g,'')});save();toast('Tersimpan');renderAtur();});
 $('btnHapusSemua').onclick=()=>confirmBox('Hapus semua data?','Seluruh petak, musim, transaksi, panen, kegiatan, dan foto di HP ini akan hilang permanen. Cadangkan dulu bila perlu.',()=>{S=blank();save();toast('Semua data dihapus');go('beranda');mulaiCheck();});
 $('btnContoh').onclick=()=>confirmBox('Isi data contoh?','Dua petak (sawah 0,5 ha dan kebun 0,3 ha): padi selesai, jagung dan cabai berjalan, lengkap dengan kegiatan lapangan. Berlabel CONTOH.',()=>{seed();save();toast('Data contoh ditambahkan');go('beranda');});
 function seed(){const d=new Date();const t=(k,dd)=>iso(new Date(d.getFullYear(),d.getMonth()-k,Math.min(dd,28)));
   const addL=l=>{if(!S.lahan.some(x=>x.id===l.id))S.lahan.push(l);};addL({id:'c-l1',nama:'CONTOH Petak Sawah Barat',luas:5000,jenis:'sawah'});addL({id:'c-l2',nama:'CONTOH Kebun Timur',luas:3000,jenis:'kebun'});
   const addM=m=>{if(!S.musim.some(x=>x.id===m.id))S.musim.push(m);};
   addM({id:'c-m1',lahanId:'c-l1',komoditas:'Padi',varietas:'Inpari 32',satuan:'kg',mulai:t(6,5),est:t(2,25),selesai:t(2,20),status:'selesai',fase:'Pasca panen',target:2800,harga:5500,anggaran:4500000});
-  addM({id:'c-m2',lahanId:'c-l1',komoditas:'Jagung',varietas:'Hibrida NK',satuan:'kg',mulai:t(1,10),est:addDays(t(1,10),100),status:'berjalan',fase:'Vegetatif',target:3000,harga:4200,anggaran:3500000});
-  addM({id:'c-m3',lahanId:'c-l2',komoditas:'Cabai merah',varietas:'Keriting',satuan:'kg',mulai:t(2,15),est:addDays(t(2,15),120),status:'berjalan',fase:'Pembuahan',target:900,harga:28000,anggaran:4000000});
+  addM({id:'c-m2',lahanId:'c-l1',komoditas:'Jagung',varietas:'Hibrida NK',satuan:'kg',mulai:t(1,10),est:addDays(t(1,10),100),status:'berjalan',fase:'Vegetatif',target:3000,harga:4200,anggaran:3500000,kondisi:'Perlu perhatian',air:'Lembap'});
+  addM({id:'c-m3',lahanId:'c-l2',komoditas:'Cabai merah',varietas:'Keriting',satuan:'kg',mulai:t(2,15),est:addDays(t(2,15),120),status:'berjalan',fase:'Pembuahan',target:900,harga:28000,anggaran:4000000,kondisi:'Sehat & subur',air:'Irigasi lancar'});
+  const addJ=j=>{if(!S.jadwal.some(x=>x.id===j.id))S.jadwal.push(j);};addJ({id:'c-j1',musimId:'c-m2',tgl:addDays(today(),1),jenisKeg:'Pemupukan',judul:'Pemupukan NPK susulan ke-2',orang:3,upah:75000,catatan:'Siapkan NPK Phonska 2 sak, kondisi tanah lembap.',done:false});addJ({id:'c-j2',musimId:'c-m3',tgl:addDays(today(),2),jenisKeg:'Penyemprotan',judul:'Penyemprotan fungisida',orang:2,upah:75000,catatan:'Waspada embun jelaga saat transisi pembuahan.',done:false});addJ({id:'c-j3',musimId:'c-m3',tgl:addDays(today(),3),jenisKeg:'Panen',judul:'Petik cabai ke-2',orang:4,upah:70000,catatan:'',done:false});addJ({id:'c-j4',musimId:'c-m2',tgl:addDays(today(),-9),jenisKeg:'Pengamatan hama',judul:'Cek ulat grayak',orang:1,upah:0,catatan:'',done:true,doneTgl:addDays(today(),-9)});
   const tx=[['c-t1','out',t(6,5),400000,'Sewa mesin / traktor','c-m1',1,'unit',400000,'Tunai','','Olah tanah traktor'],['c-t2','out',t(6,8),300000,'Benih & bibit','c-m1',25,'kg',12000,'Tunai','Kios Tani Makmur','Benih Inpari 32'],['c-t3','out',t(6,10),900000,'Upah buruh','c-m1',12,'HOK',75000,'Tunai','','Tanam (tandur)'],
     ['c-t4','out',t(5,15),650000,'Pupuk','c-m1',4,'sak',162500,'Tunai','Kios Tani Makmur','Urea 2 sak, NPK Phonska 2 sak'],['c-t5','out',t(4,20),250000,'Pestisida / obat','c-m1',2,'botol',125000,'Tunai','Kios Tani Makmur','Insektisida wereng'],['c-t6','out',t(3,1),450000,'Upah buruh','c-m1',6,'HOK',75000,'Tunai','','Penyiangan dan pemupukan ke-2'],
     ['c-t7','out',t(2,18),1050000,'Upah buruh','c-m1',14,'HOK',75000,'Tunai','','Panen dan perontokan'],['c-t8','out',t(2,19),200000,'Pengangkutan','c-m1',0,'',0,'Tunai','','Angkut gabah ke penggilingan'],['c-t9','in',t(2,21),13750000,'Penjualan hasil panen','c-m1',2500,'kg',5500,'Transfer bank','Tengkulak Pak Budi','Gabah kering panen'],
@@ -957,10 +1135,251 @@ $('btnInstall').onclick=()=>{if(!deferredPrompt)return;deferredPrompt.prompt();d
 window.addEventListener('appinstalled',()=>{toast('Aplikasi terpasang di layar utama');$('btnInstall').hidden=true;});
 try{if('serviceWorker' in navigator&&location.protocol.startsWith('http')){navigator.serviceWorker.register('./sw.js',{scope:'./'}).catch(()=>{});}}catch(e){}
 
+
+// ===== v2.1: pelengkap sesuai desain Stitch (cuaca daring, pencarian, notifikasi, jadwal, diagnosa, artikel, penyuluh, cetak) =====
+const GRUP=[['Padi',/padi|gabah/i,'seed'],['Palawija',/jagung|kedelai|kacang|singkong|ubi|sorgum|talas/i,'leaf'],['Hortikultura',/cabai|cabe|tomat|bawang|sayur|sawi|kubis|kol|terong|timun|mentimun|semangka|melon|buncis|wortel|kentang|pare|kangkung|bayam|pisang|jeruk|pepaya|jambu|mangga|durian|nanas|strawberi/i,'drop'],['Perkebunan',/sawit|karet|kopi|kakao|coklat|kelapa|lada|cengkeh|tebu|teh|vanili/i,'land'],['Ternak',/ayam|itik|bebek|puyuh|kambing|domba|sapi|kerbau|babi|lele|nila|gurame|patin|ikan|udang|lebah/i,'cow']];
+const grup=k=>{const g=GRUP.find(x=>x[1].test(k||''));return g?g[0]:'Lainnya';};
+const grupIcon=k=>{const g=GRUP.find(x=>x[1].test(k||''));return g?g[2]:'leaf';};
+function relDays(t){const d=days(today(),t);if(d===0)return 'Hari ini';if(d===1)return 'Besok';if(d>1)return d+' hari lagi';if(d===-1)return 'Kemarin';return 'Terlewat '+(-d)+' hari';}
+const nextJadwal=mid=>S.jadwal.filter(j=>!j.done&&(!mid||j.musimId===mid)).sort((a,b)=>a.tgl.localeCompare(b.tgl))[0];
+function plotIll(jenis,kom){const g=grup(kom);let body='';
+  if(jenis==='kolam')body='<rect width="300" height="160" fill="url(#w)"/><path d="M0 70q30-8 60 0t60 0 60 0 60 0 60 0" stroke="rgba(255,255,255,.35)" fill="none" stroke-width="3"/><path d="M0 100q30-8 60 0t60 0 60 0 60 0 60 0" stroke="rgba(255,255,255,.3)" fill="none" stroke-width="3"/><path d="M0 130q30-8 60 0t60 0 60 0 60 0 60 0" stroke="rgba(255,255,255,.25)" fill="none" stroke-width="3"/>';
+  else if(jenis==='kandang')body='<rect width="300" height="160" fill="url(#g)"/><path d="M60 150V80l90-45 90 45v70z" fill="#9c6b3c"/><path d="M50 84l100-50 100 50" stroke="#5b3a1e" stroke-width="8" fill="none"/><rect x="128" y="105" width="44" height="45" fill="#5b3a1e"/><path d="M80 150V95M110 150V88M190 150V88M220 150V95" stroke="#7a4f2a" stroke-width="4"/>';
+  else if(jenis==='kebun'||g==='Hortikultura'||g==='Perkebunan'){let b='';for(let r=0;r<4;r++){for(let c=0;c<9;c++){const x=14+c*34+(r%2)*17,y=62+r*26,s=7+r*2;b+='<circle cx="'+x+'" cy="'+y+'" r="'+s+'" fill="#2f8f52"/><circle cx="'+(x-3)+'" cy="'+(y-3)+'" r="'+(s*.6)+'" fill="#4fb36f"/>';}}body='<rect width="300" height="160" fill="url(#g)"/><rect y="50" width="300" height="110" fill="#8a5a2b"/><path d="M0 76h300M0 102h300M0 128h300" stroke="#6e4620" stroke-width="6"/>'+b;}
+  else{let rows='';for(let i=0;i<9;i++){const x=150+(i-4)*38;rows+='<path d="M'+x+' 160 L'+(150+(i-4)*10)+' 56" stroke="#2f8f52" stroke-width="'+(10-Math.abs(i-4))+'" opacity=".85"/>';}body='<rect width="300" height="160" fill="url(#g)"/><rect y="52" width="300" height="108" fill="#7fc98f"/>'+rows+'<path d="M0 56h300" stroke="#1b7a43" stroke-width="3"/>';}
+  return '<svg class="ill" viewBox="0 0 300 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe9f7"/><stop offset=".35" stop-color="#e6f3ea"/><stop offset=".36" stop-color="#4faa6c"/><stop offset="1" stop-color="#1b7a43"/></linearGradient><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe9f7"/><stop offset=".3" stop-color="#6fb7dc"/><stop offset="1" stop-color="#1f6d93"/></linearGradient></defs>'+body+'<circle cx="250" cy="28" r="14" fill="#ffd36b" opacity=".9"/></svg>';}
+function healthOf(m,a){if(m.status==='selesai')return {cls:'gray',label:'Musim selesai',short:'Selesai',icon:'✓',note:null};
+  const obs=[...a.kegs].filter(k=>/pengamatan|semprot/i.test(k.jenisKeg)).sort((x,y)=>y.tgl.localeCompare(x.tgl))[0];const obsNote=obs&&days(obs.tgl,today())<=14?(obs.judul||obs.jenisKeg)+' · '+relDay(obs.tgl).toLowerCase():null;const nj=nextJadwal(m.id);
+  if(m.kondisi==='Terserang hama / penyakit')return {cls:'red',label:'Terserang hama',short:'Terserang',icon:'⚠',note:obsNote};
+  if(m.kondisi==='Siap panen'||(a.total&&a.total-a.hari<=7))return {cls:'',label:'Siap panen bertahap',short:'Siap panen',icon:'✂',note:null};
+  if(nj&&/semprot/i.test(nj.jenisKeg)&&days(today(),nj.tgl)<=2)return {cls:'amber',label:'Butuh penyemprotan',short:'Perhatian',icon:'⚠',note:obsNote||('Jadwal '+nj.judul.toLowerCase()+' · '+relDays(nj.tgl).toLowerCase())};
+  if(m.kondisi==='Perlu perhatian')return {cls:'amber',label:'Perlu perhatian',short:'Perhatian',icon:'⚠',note:obsNote};
+  if(m.anggaran&&a.biaya>m.anggaran)return {cls:'amber',label:'Melebihi anggaran',short:'Anggaran',icon:'⚠',note:'Biaya '+rp(a.biaya)+' dari plafon '+rp(m.anggaran)};
+  return {cls:'',label:'Sangat baik',short:'Subur',icon:'✓',note:null};}
+
+// ===== Cuaca (Open-Meteo, perlu internet; hasil terakhir disimpan) =====
+const WMO={0:['Cerah','sun'],1:['Cerah berawan','cloudsun'],2:['Berawan sebagian','cloudsun'],3:['Berawan','cloud'],45:['Berkabut','fog'],48:['Kabut tebal','fog'],51:['Gerimis ringan','rain'],53:['Gerimis','rain'],55:['Gerimis lebat','rain'],56:['Gerimis dingin','rain'],57:['Gerimis dingin','rain'],61:['Hujan ringan','rain'],63:['Hujan sedang','rain'],65:['Hujan lebat','rain'],66:['Hujan dingin','rain'],67:['Hujan dingin','rain'],71:['Salju','cloud'],73:['Salju','cloud'],75:['Salju','cloud'],77:['Salju','cloud'],80:['Hujan lokal ringan','rain'],81:['Hujan lokal','rain'],82:['Hujan lokal lebat','rain'],85:['Salju','cloud'],86:['Salju','cloud'],95:['Badai petir','storm'],96:['Badai petir & es','storm'],99:['Badai petir & es','storm']};
+const WICON={sun:'<circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/>',cloudsun:'<circle cx="8" cy="8" r="3.2"/><path d="M8 2v1.6M2 8h1.6M3.8 3.8l1.1 1.1M12.2 3.8l-1.1 1.1"/><path d="M9 21h9a4 4 0 0 0 .6-7.95A5.5 5.5 0 0 0 8.2 12.4 4.4 4.4 0 0 0 9 21z"/>',cloud:'<path d="M7 20h10a4.5 4.5 0 0 0 .7-8.95A6 6 0 0 0 6.1 11.4 4.4 4.4 0 0 0 7 20z"/>',rain:'<path d="M7 16h10a4.5 4.5 0 0 0 .7-8.95A6 6 0 0 0 6.1 7.4 4.4 4.4 0 0 0 7 16z"/><path d="M8 19l-1 3M12 19l-1 3M16 19l-1 3"/>',storm:'<path d="M7 15h10a4.5 4.5 0 0 0 .7-8.95A6 6 0 0 0 6.1 6.4 4.4 4.4 0 0 0 7 15z"/><path d="M13 14l-3 5h4l-3 5"/>',fog:'<path d="M4 10h16M3 14h18M5 18h14"/><path d="M7 7a5 5 0 0 1 10 0"/>'};
+const CKEY=KEY+'.cuaca';
+function tzLabel(){const o=-new Date().getTimezoneOffset()/60;return o===7?'WIB':o===8?'WITA':o===9?'WIT':'GMT'+(o>=0?'+':'')+o;}
+function cuacaCache(){try{return JSON.parse(localStorage.getItem(CKEY)||'null');}catch(e){return null;}}
+function saranCuaca(d){const h=new Date().getHours();const hujan=d.pp6>=60||[61,63,65,80,81,82,95,96,99].includes(d.code);
+  if(hujan)return ['Tunda penyemprotan','Hujan diperkirakan '+(d.pp6?'(peluang '+d.pp6+'%)':'')+'. Tunda penyemprotan dan pemupukan tabur agar tidak hanyut; periksa saluran drainase petak.'];
+  if(d.wind>=20)return ['Angin kencang','Angin '+Math.round(d.wind)+' km/jam: butiran semprot mudah terbawa. Lakukan penyiangan atau pengamatan dulu; semprot bila angin mereda.'];
+  const lembap=d.rh>=85?' Kelembapan tinggi ('+d.rh+'%): waspadai jamur/patek dan hawar daun.':'';
+  if(h<10)return ['Kondisi ideal','Waktu tepat untuk penyemprotan, pemupukan daun, dan inspeksi hama sebelum pukul 10:00 '+tzLabel()+'.'+lembap];
+  if(h>=15)return ['Sore yang baik','Suhu turun dan angin tenang: cocok untuk penyemprotan dan pemupukan susulan. Hindari aplikasi bila awan hujan mendekat.'+lembap];
+  return ['Siang terik','Tunda penyemprotan sampai setelah pukul 15:00 agar tidak menguap. Saatnya pengamatan hama dan pencatatan buku kas.'+lembap];}
+function cuacaRender(){const lok=S.atur.lokasi;const c=cuacaCache();const body=$('cwBody');
+  if(!lok){$('cwLoc').textContent='Lokasi belum diatur';$('cwUpd').textContent='Cuaca';body.innerHTML='<div class="glass set"><p>Tampilkan cuaca &amp; kondisi lapangan di lokasi lahan Anda. Perlu internet.</p><button class="btn" type="button" id="cwGps">Gunakan GPS</button><button class="btn ghost" type="button" id="cwPilih">Pilih desa / kota</button></div>';$('cwTipT').textContent='Kondisi ideal';$('cwTipTxt').textContent='Saran waktu semprot, pupuk, dan panen akan muncul setelah lokasi diatur.';return;}
+  $('cwLoc').textContent=lok.nama;
+  if(!c||!c.d){$('cwUpd').textContent=navigator.onLine?'Memuat…':'Offline';body.innerHTML='<div class="glass set"><p>'+(navigator.onLine?'Mengambil data cuaca…':'Cuaca akan tampil saat ada internet.')+'</p><button class="btn ghost" type="button" id="cwRetry">Coba lagi</button></div>';$('cwTipT').textContent='Kondisi ideal';$('cwTipTxt').textContent='—';return;}
+  const d=c.d;const w=WMO[d.code]||['—','cloud'];const ic=d.isDay===0&&w[1]==='sun'?'cloud':w[1];const upd=new Date(c.t);const lama=(Date.now()-c.t)/36e5;
+  $('cwUpd').textContent='Pembaruan '+String(upd.getHours()).padStart(2,'0')+':'+String(upd.getMinutes()).padStart(2,'0')+(lama>3?' (tersimpan)':'');$('cwUpd').title='Waktu '+tzLabel();
+  body.innerHTML='<div class="cw"><span class="cw-ic"><svg viewBox="0 0 24 24">'+WICON[ic]+'</svg></span><div><div class="big num">'+Math.round(d.temp)+'<sup>°C</sup></div><div class="lbl">'+w[0]+(d.wind<10?' · Lembut':d.wind<20?' · Berangin':' · Angin kencang')+'</div>'+(d.besok?'<div class="lbl" style="opacity:.75">Besok: '+(WMO[d.besok.code]||['—'])[0]+(d.besok.pp?', peluang hujan '+d.besok.pp+'%':'')+'</div>':'')+'</div><div class="cw-r"><div>Kelembapan<b>'+d.rh+'%</b></div><div>Angin<b>'+Math.round(d.wind)+' km/jam</b></div>'+(d.pp6!=null?'<div>Hujan 6 jam<b>'+d.pp6+'%</b></div>':'')+'</div></div><div class="cwfoot"><span>'+(d.tmin!=null?'Hari ini '+Math.round(d.tmin)+'–'+Math.round(d.tmax)+'°C':'')+'</span><button type="button" id="cwRetry">Perbarui</button></div>';
+  const s=saranCuaca(d);$('cwTipT').textContent=s[0]+':';$('cwTipTxt').textContent=' '+s[1];}
+let cuacaBusy=false;
+async function cuacaRefresh(force){const lok=S.atur.lokasi;if(!lok||cuacaBusy)return;const c=cuacaCache();if(!force&&c&&Date.now()-c.t<30*60*1000){cuacaRender();return;}if(!navigator.onLine){cuacaRender();return;}
+  cuacaBusy=true;try{const u='https://api.open-meteo.com/v1/forecast?latitude='+lok.lat+'&longitude='+lok.lon+'&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code,is_day&hourly=precipitation_probability&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&forecast_days=2&timezone=auto';
+    const r=await fetch(u,{cache:'no-store'});if(!r.ok)throw 0;const j=await r.json();const cu=j.current||{};const ht=(j.hourly&&j.hourly.time)||[];const hp=(j.hourly&&j.hourly.precipitation_probability)||[];
+    const now=new Date();const key=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0')+'T'+String(now.getHours()).padStart(2,'0')+':00';let i=ht.indexOf(key);if(i<0)i=0;const pp6=hp.length?Math.max(...hp.slice(i,i+6).map(x=>x||0)):null;
+    const dy=j.daily||{};const d={temp:cu.temperature_2m,rh:cu.relative_humidity_2m,wind:cu.wind_speed_10m,code:cu.weather_code,isDay:cu.is_day,pp6,tmax:dy.temperature_2m_max?dy.temperature_2m_max[0]:null,tmin:dy.temperature_2m_min?dy.temperature_2m_min[0]:null,besok:dy.weather_code&&dy.weather_code[1]!=null?{code:dy.weather_code[1],pp:dy.precipitation_probability_max?dy.precipitation_probability_max[1]:null}:null};
+    try{localStorage.setItem(CKEY,JSON.stringify({t:Date.now(),d}));}catch(e){}}
+  catch(e){if(force)toast('Cuaca belum bisa diambil. Periksa internet.');}
+  cuacaBusy=false;cuacaRender();notifDot();}
+document.addEventListener('click',e=>{if(e.target.closest('#cwGps')){openLokasi();gps();}else if(e.target.closest('#cwPilih')){openLokasi();}else if(e.target.closest('#cwRetry')){cuacaRefresh(true);toast('Memperbarui cuaca…');}});
+function openLokasi(){$('lokHasil').innerHTML='';$('lokStatus').textContent=S.atur.lokasi?'Lokasi saat ini: '+S.atur.lokasi.nama:'';$('ovLokasi').hidden=false;}
+$('btnLokasi').onclick=openLokasi;$('lokTutup').onclick=()=>$('ovLokasi').hidden=true;$('btnGps').onclick=()=>gps();
+$('lokHapus').onclick=()=>{S.atur.lokasi=null;save();try{localStorage.removeItem(CKEY);}catch(e){}$('ovLokasi').hidden=true;go(cur);toast('Lokasi dihapus');};
+function setLokasi(l){S.atur.lokasi=l;save();try{localStorage.removeItem(CKEY);}catch(e){}$('ovLokasi').hidden=true;toast('Lokasi: '+l.nama);if(cur==='beranda')cuacaRender();else if(cur==='atur')renderAtur();cuacaRefresh(true);}
+function gps(){if(!navigator.geolocation){toast('HP ini tidak mendukung GPS di aplikasi.');return;}$('lokStatus').textContent='Mencari lokasi HP…';
+  navigator.geolocation.getCurrentPosition(async pos=>{const lat=+pos.coords.latitude.toFixed(4),lon=+pos.coords.longitude.toFixed(4);let nama='Lokasi HP ('+lat+', '+lon+')';
+    try{const r=await fetch('https://api.bigdatacloud.net/data/reverse-geocode-client?latitude='+lat+'&longitude='+lon+'&localityLanguage=id');if(r.ok){const j=await r.json();const parts=[j.locality,j.city,j.principalSubdivision].filter((x,i,a)=>x&&a.indexOf(x)===i);if(parts.length)nama=parts.slice(0,2).join(', ');}}catch(e){}
+    setLokasi({nama,lat,lon});},err=>{$('lokStatus').textContent=err.code===1?'Izin lokasi ditolak. Izinkan lokasi untuk aplikasi ini, atau cari nama desa/kota di bawah.':'Lokasi HP tidak ditemukan. Cari nama desa/kota di bawah.';},{timeout:15000,maximumAge:600000});}
+async function cariLokasi(){const q=$('lokCari').value.trim();if(q.length<3){toast('Ketik minimal 3 huruf.');return;}if(!navigator.onLine){$('lokStatus').textContent='Perlu internet untuk mencari lokasi.';return;}$('lokStatus').textContent='Mencari…';
+  try{const r=await fetch('https://geocoding-api.open-meteo.com/v1/search?name='+encodeURIComponent(q)+'&count=8&language=id&format=json');const j=await r.json();const rs=(j.results||[]).filter(x=>!x.country_code||x.country_code==='ID'||true);
+    $('lokHasil').innerHTML=rs.length?rs.map((x,i)=>'<button type="button" data-lok="'+i+'"><b>'+esc(x.name)+'</b><span>'+esc([x.admin3,x.admin2,x.admin1,x.country].filter(Boolean).join(', '))+'</span></button>').join(''):'<div class="hint">Tidak ditemukan. Coba nama kecamatan atau kota terdekat.</div>';$('lokStatus').textContent='';
+    $('lokHasil').querySelectorAll('[data-lok]').forEach(b=>b.onclick=()=>{const x=rs[+b.dataset.lok];setLokasi({nama:x.name+(x.admin1?', '+x.admin1:''),lat:+x.latitude.toFixed(4),lon:+x.longitude.toFixed(4)});});}
+  catch(e){$('lokStatus').textContent='Pencarian gagal. Periksa internet.';}}
+$('lokCariBtn').onclick=cariLokasi;$('lokCari').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();cariLokasi();}});
+
+// ===== Pencarian global =====
+let cariActs=[];
+function cari(q){q=q.toLowerCase();const out=[];const add=(k,ic,b,s,act)=>{if(out.length<10){out.push({k,ic,b,s});cariActs.push(act);}};
+  S.musim.filter(m=>(m.komoditas+' '+(m.varietas||'')+' '+musimLabel(m)).toLowerCase().includes(q)).slice(0,3).forEach(m=>add('Petak & musim',grupIcon(m.komoditas),musimLabel(m)+(m.varietas?' '+m.varietas:''),'HST '+hst(m)+' · '+(m.status==='selesai'?'selesai':'berjalan'),()=>{detailId=m.id;dTab='ringkasan';go('detail');}));
+  DIAG.filter(d=>(d.n+' '+d.g+' '+d.k).toLowerCase().includes(q)).slice(0,3).forEach(d=>add('Diagnosa hama',d.j==='hama'?'bug':'spray',d.n,d.k+' · '+d.g.slice(0,60)+'…',()=>{dgQ=q;dgK='';go('diagnosa');$('dgCari').value=q;renderDiagnosa();}));
+  allRows().filter(t=>((t.ket||'')+' '+(t.judul||'')+' '+(t.kat||'')+' '+(t.pihak||'')+' '+(t.jenisKeg||'')).toLowerCase().includes(q)).slice(0,3).forEach(t=>add('Catatan',t.jenis==='keg'?iconOf(t.jenisKeg,KEG):t.jenis==='panen'?'harvest':iconOf(t.kat,t.jenis==='in'?KAT_IN:KAT_OUT),t.ket||t.judul||t.kat||'Panen',fmtTgl(t.tgl)+' · '+musimLabel(musimOf(t.musimId))+(t.jumlah?' · '+rp(t.jumlah):''),()=>{if(t.jenis==='keg')editKeg(t);else if(t.jenis==='panen')editPanen(t);else editTx(t.id);}));
+  ARTIKEL.filter(a=>(a.t+' '+a.tag).toLowerCase().includes(q)).slice(0,2).forEach(a=>add('Artikel','leaf',a.t,a.tag+' · '+a.m+' mnt baca',()=>baca(a.id)));
+  S.jadwal.filter(j=>!j.done&&(j.judul+' '+j.jenisKeg).toLowerCase().includes(q)).slice(0,2).forEach(j=>add('Jadwal','cal',j.judul,relDays(j.tgl)+' · '+musimLabel(musimOf(j.musimId)),()=>go('jadwal')));
+  return out;}
+let cariT=null;
+$('cariGlobal').addEventListener('input',()=>{clearTimeout(cariT);cariT=setTimeout(()=>{const q=$('cariGlobal').value.trim();const box=$('cariHasil');if(q.length<2){box.hidden=true;return;}cariActs=[];const rs=cari(q);
+  box.innerHTML=rs.length?rs.map((r,i)=>'<button type="button" data-cari="'+i+'"><span class="ic">'+svgI(r.ic)+'</span><span><span class="k">'+r.k+'</span><b>'+esc(r.b)+'</b><span class="s">'+esc(r.s)+'</span></span><span class="chev">›</span></button>').join(''):'<div class="empty" style="padding:10px">Tidak ditemukan. Coba kata lain.</div>';box.hidden=false;},180);});
+$('cariHasil').addEventListener('click',e=>{const b=e.target.closest('[data-cari]');if(!b)return;$('cariHasil').hidden=true;$('cariGlobal').value='';cariActs[+b.dataset.cari]();});
+$('cariFilter').onclick=()=>{kTab='transaksi';go('keuangan');$('fCari').value=$('cariGlobal').value.trim();renderRiwayat();};
+
+// ===== Notifikasi =====
+function notifs(){const out=[];const t=today();
+  S.jadwal.filter(j=>!j.done).sort((a,b)=>a.tgl.localeCompare(b.tgl)).forEach(j=>{const d=days(t,j.tgl);if(d>3)return;out.push({lvl:d<0?'bad':d===0?'warn':'info',ic:'cal',b:j.judul,s:musimLabel(musimOf(j.musimId))+' · '+relDays(j.tgl)+(j.orang?' · '+j.orang+' buruh':''),act:()=>go('jadwal')});});
+  S.musim.filter(m=>m.status!=='selesai'&&m.est).forEach(m=>{const d=days(t,m.est);if(d<=7)out.push({lvl:d<0?'warn':'info',ic:'harvest',b:d<0?'Perkiraan panen terlewat':'Panen '+relDays(m.est).toLowerCase(),s:musimLabel(m)+' · perkiraan '+fmtTgl(m.est),act:()=>{detailId=m.id;go('detail');}});
+    const a=analisa(m);if(m.anggaran&&a.biaya>m.anggaran)out.push({lvl:'bad',ic:'cash',b:'Biaya melebihi anggaran',s:musimLabel(m)+' · '+rp(a.biaya)+' dari '+rp(m.anggaran),act:()=>{detailId=m.id;go('detail');}});});
+  const hu=hutangPerPihak('out'),pi=hutangPerPihak('in');if(hu.length)out.push({lvl:'warn',ic:'tag',b:'Utang kios '+rp(hu.reduce((a,[,v])=>a+v.s,0)),s:hu.length+' kios/pemasok belum dibayar',act:()=>{kTab='hutang';go('keuangan');}});if(pi.length)out.push({lvl:'info',ic:'coins',b:'Piutang '+rp(pi.reduce((a,[,v])=>a+v.s,0)),s:pi.length+' pembeli belum membayar',act:()=>{kTab='hutang';go('keuangan');}});
+  const c=cuacaCache();if(c&&c.d&&(c.d.pp6>=60||(c.d.besok&&c.d.besok.pp>=70)))out.push({lvl:'warn',ic:'drop',b:'Peringatan hujan',s:(c.d.pp6>=60?'Peluang hujan 6 jam ke depan '+c.d.pp6+'%':'Besok peluang hujan '+c.d.besok.pp+'%')+' · tunda semprot & jemur',act:()=>go('beranda')});
+  let lb=null;try{lb=localStorage.getItem(KEY+'.backup');}catch(e){}const n=S.tx.length+S.keg.length;if(n>=10&&(!lb||days(lb,t)>14))out.push({lvl:'info',ic:'gift',b:'Cadangkan data',s:lb?'Cadangan terakhir '+fmtTgl(lb):'Belum pernah dicadangkan · kirim ke WhatsApp/Drive',act:()=>{kTab='analisis';go('keuangan');}});
+  return out;}
+function notifDot(){try{$('notifDot').hidden=!notifs().some(n=>n.lvl==='warn'||n.lvl==='bad');}catch(e){}}
+let notifActs=[];
+$('btnNotif').onclick=()=>{const ns=notifs();notifActs=ns.map(n=>n.act);$('notifSub').textContent=ns.length?ns.length+' hal perlu perhatian · '+fmtTglHari(today()):'Tidak ada pengingat · '+fmtTglHari(today());
+  $('notifList').innerHTML=ns.length?ns.map((n,i)=>'<button type="button" class="nrow '+n.lvl+'" data-notif="'+i+'"><span class="ic">'+svgI(n.ic)+'</span><span><b>'+esc(n.b)+'</b><span>'+esc(n.s)+'</span></span><span class="chev">›</span></button>').join(''):'<div class="empty">Semua aman. Jadwal, utang, dan anggaran terkendali. 👍</div>';$('ovNotif').hidden=false;};
+$('notifTutup').onclick=()=>$('ovNotif').hidden=true;
+$('notifList').addEventListener('click',e=>{const b=e.target.closest('[data-notif]');if(!b)return;$('ovNotif').hidden=true;notifActs[+b.dataset.notif]();});
+
+// ===== Jadwal buruh tani =====
+let jdF='aktif';
+function renderJadwal(){document.querySelectorAll('#jdFilter .chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.f===jdF));const t=today();
+  const list=S.jadwal.filter(j=>!jdF||(jdF==='selesai'?j.done:!j.done)).sort((a,b)=>jdF==='selesai'?b.tgl.localeCompare(a.tgl):a.tgl.localeCompare(b.tgl));$('jdCount').textContent=S.jadwal.filter(j=>!j.done).length+' akan datang';
+  let html='',grpLast='';list.forEach(j=>{const d=days(t,j.tgl);const g=j.done?'Selesai':d<0?'Terlewat':d===0?'Hari ini':d===1?'Besok':d<=7?'Minggu ini':'Mendatang';if(g!==grpLast){html+='<div class="dayh">'+g+'</div>';grpLast=g;}const m=musimOf(j.musimId);
+    html+='<div class="jd'+(j.done?' done':d<0?' late':'')+'"><button class="ck" type="button" data-jdone="'+j.id+'" aria-checked="'+j.done+'"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></button><button class="t" type="button" data-jedit="'+j.id+'"><b>'+esc(j.judul)+'</b><span>'+esc(musimLabel(m))+' · '+esc(j.jenisKeg)+(j.orang?' · '+j.orang+' buruh':'')+(j.orang&&j.upah?' · est. upah '+rp(j.orang*j.upah):'')+'</span>'+(j.catatan?'<span>'+esc(j.catatan)+'</span>':'')+'</button><div class="when" style="color:'+(j.done?'var(--muted)':d<0?'var(--red)':d<=1?'var(--amber-fg)':'var(--accent)')+'">'+(j.done?'✓ '+fmtTgl(j.doneTgl||j.tgl):relDays(j.tgl))+'<small>'+HARI[new Date(j.tgl+'T00:00:00').getDay()]+', '+fmtTgl(j.tgl)+'</small></div></div>';});
+  $('jdList').innerHTML=list.length?html:'<div class="card"><div class="empty">'+(jdF==='selesai'?'Belum ada jadwal yang selesai.':'Belum ada jadwal. Ketuk <b>Tambah jadwal kegiatan</b> untuk merencanakan pemupukan, penyemprotan, atau panen.')+'</div></div>';}
+$('jdFilter').addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;jdF=c.dataset.f;renderJadwal();});
+function openJadwal(j,musimId){if(!S.musim.length){toast('Buka musim tanam dulu di menu Lahan.');return;}$('jdTitle').textContent=j?'Ubah jadwal':'Jadwal kegiatan baru';$('jdId').value=j?j.id:'';fillMusimSel($('jdMusim'),false);$('jdMusim').querySelector('option[value=""]').remove();if(j)$('jdMusim').value=j.musimId;else if(musimId)$('jdMusim').value=musimId;
+  $('jdJenis').innerHTML=KEG.map(k=>'<option>'+k[0]+'</option>').join('');$('jdJenis').value=j?j.jenisKeg:'Pemupukan';$('jdTgl').value=j?j.tgl:addDays(today(),1);$('jdJudul').value=j?j.judul:'';$('jdOrang').value=j&&j.orang?j.orang:'';$('jdUpah').value=j&&j.upah?j.upah.toLocaleString('id-ID'):'';$('jdCatatan').value=j?j.catatan||'':'';$('jdHapus').hidden=!j;$('ovJadwal').hidden=false;}
+fmtInput($('jdUpah'));
+$('btnJadwalBaru').onclick=()=>openJadwal(null,null);$('jdBatal').onclick=()=>$('ovJadwal').hidden=true;
+$('jdSimpan').onclick=()=>{const judul=$('jdJudul').value.trim()||$('jdJenis').value;const old=S.jadwal.find(x=>x.id===$('jdId').value);const j={id:$('jdId').value||uid(),musimId:$('jdMusim').value,tgl:$('jdTgl').value||today(),jenisKeg:$('jdJenis').value,judul,orang:num($('jdOrang').value),upah:num($('jdUpah').value),catatan:$('jdCatatan').value.trim(),done:old?old.done:false,doneTgl:old?old.doneTgl:undefined};
+  const i=S.jadwal.findIndex(x=>x.id===j.id);if(i>=0)S.jadwal[i]=j;else S.jadwal.push(j);save();$('ovJadwal').hidden=true;toast('Jadwal disimpan');if(cur==='detail')renderDetail();else go('jadwal');};
+$('jdHapus').onclick=()=>{S.jadwal=S.jadwal.filter(x=>x.id!==$('jdId').value);save();$('ovJadwal').hidden=true;go(cur);};
+document.addEventListener('click',e=>{const b=e.target.closest('[data-jedit]');if(b)openJadwal(S.jadwal.find(x=>x.id===b.dataset.jedit),null);});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-jdone]');if(!b)return;const j=S.jadwal.find(x=>x.id===b.dataset.jdone);if(!j)return;
+  if(j.done){j.done=false;j.doneTgl=undefined;save();go(cur);toast('Dibuka kembali');return;}
+  const selesai=()=>{j.done=true;j.doneTgl=today();save();};
+  confirmBox('Tandai "'+j.judul+'" selesai?','Catat sekaligus sebagai kegiatan lapangan'+(j.orang&&j.upah?' (upah buruh ± '+rp(j.orang*j.upah)+' dicatat terpisah sebagai biaya)':'')+'?',()=>{selesai();resetForm();setJenis('keg');setKeg(j.jenisKeg);$('txMusim').value=j.musimId;$('txKet').value=j.judul;$('kgOrang').value=j.orang||'';$('txCatatan').value=j.catatan||'';musimNote();go('catat');if(j.orang&&j.upah)toast('Setelah ini, catat upah buruh '+rp(j.orang*j.upah)+' sebagai Biaya.');});
+  $('dlgYes').textContent='Catat kegiatan';$('dlgNo').textContent='Hanya tandai';$('dlgNo').onclick=()=>{$('overlay').hidden=true;restoreDlg();selesai();go(cur);toast('Jadwal selesai');};const old=$('dlgYes').onclick;$('dlgYes').onclick=()=>{restoreDlg();old();};});
+
+// ===== Diagnosa hama & penyakit (panduan umum PHT) =====
+const DIAG=[
+ {k:'Padi',n:'Wereng batang cokelat',j:'hama',g:'Tanaman menguning lalu mengering seperti terbakar (hopperburn) dalam bentuk lingkaran, mulai dari tengah petak. Serangga kecil cokelat berkumpul di pangkal batang.',p:'Amati 20 rumpun tiap minggu; ambang 10 ekor/rumpun saat vegetatif. Jangan kelebihan urea, tanam serempak, pakai varietas tahan (Inpari 13/33), lestarikan laba-laba. Bila melampaui ambang, semprot insektisida selektif (mis. berbahan pymetrozine atau buprofezin) ke pangkal batang pagi/sore, bukan ke daun.'},
+ {k:'Padi',n:'Penggerek batang (sundep/beluk)',j:'hama',g:'Fase vegetatif: anakan mati pucuk, mudah dicabut (sundep). Fase bunting/malai: malai putih kosong tegak (beluk). Ada ngengat kuning/putih dan kelompok telur di ujung daun.',p:'Kumpulkan kelompok telur, pasang lampu perangkap, tanam serempak, potong jerami rendah saat panen. Pengendalian kimia hanya jika >10% anakan sundep atau ada 1 kelompok telur per 3 m², gunakan insektisida berbahan aktif terdaftar (mis. karbofuran butiran/klorantraniliprol) sesuai label.'},
+ {k:'Padi',n:'Tikus sawah',j:'hama',g:'Batang terpotong miring, rumpun rebah berkelompok terutama di tengah petak dan dekat pematang, lubang aktif di tanggul.',p:'Gropyokan massal dan bongkar lubang sebelum tanam, pasang bubu perangkap dan pagar plastik (TBS/LTBS), sanitasi pematang, pelihara burung hantu (rubuha). Umpan racun hanya saat bera dan serentak satu hamparan.'},
+ {k:'Padi',n:'Walang sangit',j:'hama',g:'Gabah hampa atau bercak cokelat di kulit gabah saat fase masak susu; bau khas; serangga cokelat ramping berkumpul di malai pagi/sore.',p:'Tanam serempak, bersihkan gulma di pematang, pasang umpan bangkai kepiting/keong untuk perangkap. Semprot pagi atau sore saat ambang >5 ekor per 9 rumpun pada fase masak susu.'},
+ {k:'Padi',n:'Keong mas',j:'hama',g:'Bibit muda (sampai 15 HST) habis dimakan, ada telur merah muda di batang/pematang, keong besar di genangan.',p:'Keringkan petak berselang pada 1–2 minggu pertama, pungut keong dan telur, pasang ajir perangkap telur, beri saluran caren untuk menjebak, pelihara itik setelah tanaman besar. Moluskisida hanya di caren bila serangan berat.'},
+ {k:'Padi',n:'Blas (Pyricularia)',j:'penyakit',g:'Bercak belah ketupat abu-abu dengan tepi cokelat pada daun (blas daun); leher malai busuk kehitaman sehingga malai patah dan hampa (blas leher).',p:'Gunakan varietas tahan dan benih sehat, pupuk N seimbang (jangan berlebih), jarak tanam tidak terlalu rapat, buang sisa jerami terinfeksi. Fungisida berbahan trisiklazol/azoksistrobin saat awal gejala dan menjelang keluar malai sesuai label.'},
+ {k:'Padi',n:'Hawar daun bakteri (kresek)',j:'penyakit',g:'Tepi daun menguning mengering mulai dari ujung membentuk garis bergelombang, meluas dan daun mengering; pada bibit tanaman layu seluruhnya (kresek).',p:'Pakai varietas tahan, benih sehat, hindari pemupukan N berlebih dan genangan tinggi saat gejala, pengairan berselang, bersihkan gulma dan sisa tanaman. Bakterisida tembaga dapat menekan penyebaran bila cuaca basah.'},
+ {k:'Padi',n:'Tungro',j:'penyakit',g:'Tanaman kerdil, daun muda kuning-oranye dari ujung, anakan sedikit; ditularkan wereng hijau; menyebar berkelompok.',p:'Cabut dan benamkan tanaman sakit, tanam serempak dengan varietas tahan tungro, kendalikan wereng hijau pada 2–4 minggu pertama, atur waktu tanam menghindari puncak populasi vektor.'},
+ {k:'Jagung',n:'Ulat grayak jagung (Spodoptera frugiperda)',j:'hama',g:'Daun berlubang memanjang tidak beraturan dengan kotoran seperti serbuk gergaji di pucuk (corong); pada tongkol ada lubang gerekan. Ulat ada huruf Y terbalik di kepala dan 4 bintik di ruas belakang.',p:'Amati sejak 1 minggu setelah tanam, ambil ulat dengan tangan pada populasi rendah, taburkan pasir/abu ke corong, pasang perangkap feromon. Semprot pagi/sore ke arah pucuk saat kerusakan >10–20% tanaman muda; gunakan bioinsektisida (Bt, Metarhizium) atau emamektin benzoat/spinetoram secara bergilir.'},
+ {k:'Jagung',n:'Bulai (downy mildew)',j:'penyakit',g:'Daun bergaris klorotik putih-kuning sejajar tulang daun, ada lapisan tepung putih di bawah daun pagi hari, tanaman kerdil dan tidak bertongkol. Menyerang tanaman muda <3 minggu.',p:'Gunakan benih berlabel yang sudah diberi perlakuan fungisida metalaksil/dimetomorf, tanam serempak, cabut dan musnahkan tanaman sakit segera, hindari tanam dekat pertanaman jagung tua yang terserang.'},
+ {k:'Jagung',n:'Penggerek tongkol (Helicoverpa)',j:'hama',g:'Ujung tongkol berlubang dengan kotoran ulat, rambut tongkol terpotong, biji rusak dan berjamur.',p:'Tanam serempak, pelihara musuh alami, pangkas rambut tongkol setelah penyerbukan. Semprot ujung tongkol saat rambut keluar bila serangan tinggi; bioinsektisida Bt atau insektisida terdaftar.'},
+ {k:'Jagung',n:'Hawar daun (Helminthosporium)',j:'penyakit',g:'Bercak memanjang seperti gelendong cokelat keabuan 5–15 cm, dimulai dari daun bawah, daun mengering sebelum waktunya.',p:'Varietas toleran, pemupukan K cukup, sanitasi sisa tanaman, rotasi dengan bukan rumput-rumputan. Fungisida mankozeb/azoksistrobin bila cuaca lembap dan serangan menjalar ke daun atas sebelum pembungaan.'},
+ {k:'Kedelai',n:'Ulat grayak & ulat jengkal',j:'hama',g:'Daun berlubang hingga tersisa tulang daun, ulat bergerombol di bawah daun saat muda, aktif malam hari.',p:'Pengamatan 2 kali seminggu, ambil kelompok telur/ulat muda, pasang perangkap feromon, semprot sore hari bila kerusakan daun >12,5% sebelum berbunga; gunakan SlNPV atau insektisida terdaftar.'},
+ {k:'Kedelai',n:'Penggerek & pengisap polong',j:'hama',g:'Polong berlubang kecil, biji keriput/berbintik hitam, polong hampa; kepik hijau atau cokelat terlihat pada polong.',p:'Tanam serempak, panen tepat waktu, perangkap kuning. Semprot saat pembentukan polong bila ditemukan 2 pasang kepik per 10 tanaman atau 2% polong terserang.'},
+ {k:'Kedelai',n:'Karat daun',j:'penyakit',g:'Bintik kecil cokelat kemerahan seperti karat di bawah daun, daun menguning dan rontok dini, polong sedikit.',p:'Varietas tahan, jarak tanam tidak rapat, hindari kelembapan berlebih; fungisida (mis. heksakonazol/mankozeb) saat gejala awal pada fase berbunga.'},
+ {k:'Cabai',n:'Antraknosa / patek',j:'penyakit',g:'Buah bercak cokelat kehitaman cekung melingkar, membesar dan berlendir oranye, buah busuk kering dan rontok. Meledak saat hujan dan lembap.',p:'Benih sehat/direndam air hangat 50 °C, mulsa plastik, jarak tanam longgar, drainase baik, petik dan musnahkan buah sakit (jangan dibuang di kebun). Fungisida kontak (mankozeb/klorotalonil) rutin saat hujan bergantian dengan sistemik (azoksistrobin/difenokonazol); semprot setelah hujan reda.'},
+ {k:'Cabai',n:'Lalat buah',j:'hama',g:'Buah ada titik tusukan kecil, bagian dalam berbelatung, buah menguning lalu rontok sebelum tua.',p:'Pasang perangkap metil eugenol (petrogenol) 15–20 buah/ha sejak berbunga, kumpulkan dan kubur buah rontok, bungkus buah bila memungkinkan, sanitasi kebun. Semprot umpan protein bila populasi tinggi.'},
+ {k:'Cabai',n:'Thrips & kutu daun (daun keriting)',j:'hama',g:'Daun muda keriting ke atas, menebal, permukaan bawah keperakan atau mengkilap, pertumbuhan terhambat; serangga sangat kecil di pucuk.',p:'Perangkap likat kuning/biru, mulsa perak, buang pucuk terserang berat, semprot air sabun atau minyak nabati pada populasi rendah; insektisida abamektin/spinosad secara bergilir bila meluas, semprot ke bawah daun.'},
+ {k:'Cabai',n:'Virus kuning (gemini) / bulai cabai',j:'penyakit',g:'Daun menguning cerah di antara tulang daun, mengecil dan keriting, tanaman kerdil dan hampir tidak berbuah. Ditularkan kutu kebul.',p:'Tidak ada obatnya: cabut tanaman sakit sejak dini, kendalikan kutu kebul dengan perangkap kuning dan insektisida selektif, gunakan bibit bebas virus, tanam pembatas jagung di tepi, mulsa perak.'},
+ {k:'Cabai',n:'Layu fusarium / layu bakteri',j:'penyakit',g:'Tanaman layu mendadak siang hari, segar kembali sore, lalu mati; pangkal batang cokelat (fusarium) atau keluar lendir putih bila batang dipotong dan dicelup air (bakteri).',p:'Rotasi dengan bukan terong-terongan, bedengan tinggi dan drainase lancar, pH tanah 6–7 (kapur), cabut tanaman sakit beserta tanahnya, aplikasi Trichoderma dan pupuk kandang matang sebelum tanam.'},
+ {k:'Tomat',n:'Busuk daun (Phytophthora)',j:'penyakit',g:'Bercak basah cokelat kehitaman di daun dan batang, meluas cepat saat hujan dingin, buah bercak cokelat keras.',p:'Jarak tanam longgar, pangkas daun bawah, ajir dan ikat, hindari pengairan dari atas; fungisida mankozeb/propineb berselang dengan dimetomorf saat musim hujan.'},
+ {k:'Tomat',n:'Ulat buah (Helicoverpa)',j:'hama',g:'Buah berlubang besar, ulat masuk sebagian tubuhnya ke dalam buah, buah busuk dan rontok.',p:'Pungut buah terserang, tanaman perangkap jagung di tepi, musuh alami Trichogramma; semprot Bt/insektisida terdaftar sore hari saat buah pentil.'},
+ {k:'Bawang merah',n:'Ulat bawang (Spodoptera exigua)',j:'hama',g:'Daun berlubang memanjang dan transparan, ulat berada di dalam rongga daun, kelompok telur berbulu putih di ujung daun.',p:'Ambil kelompok telur dan ulat tiap pagi, pasang perangkap feromon/lampu, semprot sore hari bila >1 kelompok telur per 10 rumpun; bioinsektisida SeNPV atau insektisida bergilir.'},
+ {k:'Bawang merah',n:'Bercak ungu (Alternaria porri)',j:'penyakit',g:'Bercak cekung keputihan lalu ungu kecokelatan dengan lingkaran konsentris, daun patah di bercak, umbi busuk di gudang.',p:'Drainase baik, kurangi N berlebih, buang daun sakit, fungisida kontak rutin saat cuaca lembap, panen saat cuaca kering lalu keringkan sempurna.'},
+ {k:'Bawang merah',n:'Layu fusarium (moler)',j:'penyakit',g:'Daun menguning terpelintir, melengkung, tanaman mudah dicabut, dasar umbi busuk putih kemerahan.',p:'Bibit sehat, perlakuan Trichoderma, rotasi tanaman, drainase, cabut tanaman sakit beserta tanahnya, hindari luka pada umbi.'},
+ {k:'Sayuran',n:'Ulat daun kubis / sawi (Plutella)',j:'hama',g:'Daun berlubang kecil bersisa lapisan kulit (seperti jendela), ulat kecil hijau menggeliat dan menjatuhkan diri bila disentuh.',p:'Tumpang sari dengan tomat, musuh alami Diadegma, kumpulkan ulat; semprot Bt atau insektisida terdaftar bergilir bila >5 ulat per 10 tanaman.'},
+ {k:'Sayuran',n:'Akar gada / busuk lunak',j:'penyakit',g:'Tanaman kerdil, layu siang hari, akar membengkak seperti gada (akar gada) atau batang/krop berlendir berbau busuk (busuk lunak bakteri).',p:'Kapur tanah pH 6,5–7, rotasi dengan bukan kubis-kubisan 3 tahun, bibit sehat, drainase baik, hindari luka dan air berlebih, cabut musnahkan tanaman sakit.'},
+ {k:'Singkong',n:'Tungau merah & kutu putih',j:'hama',g:'Daun berbintik kuning, mengering dari bawah (tungau, musim kemarau); pucuk keriting dengan massa putih berlilin (kutu putih).',p:'Varietas toleran, pelihara predator, semprot air bertekanan, pemangkasan pucuk terserang; akarisida/insektisida hanya bila serangan berat sebelum musim hujan.'},
+ {k:'Singkong',n:'Busuk umbi / busuk akar',j:'penyakit',g:'Daun layu, umbi lunak berair berbau busuk, terutama di tanah tergenang.',p:'Guludan tinggi, drainase, jangan tanam di lahan tergenang, panen tepat umur, rotasi tanaman.'},
+ {k:'Kelapa sawit',n:'Ulat api & ulat kantong',j:'hama',g:'Daun berlubang hingga tersisa lidi dari pelepah bawah, ulat berbulu gatal (ulat api) atau berkantong serasah.',p:'Sensus ulat tiap bulan, tanam bunga Turnera/Antigonon untuk musuh alami, pengutipan manual; bila melewati ambang (5–10 ulat/pelepah) gunakan virus/Bt atau insektisida terdaftar.'},
+ {k:'Kelapa sawit',n:'Busuk pangkal batang (Ganoderma)',j:'penyakit',g:'Daun pupus tidak membuka (tombak menumpuk), pelepah tua menggantung, tubuh buah jamur seperti kipas di pangkal batang, tanaman tumbang.',p:'Sanitasi tunggul tanaman lama, bongkar dan bakar pohon sakit, isolasi parit, aplikasi Trichoderma dan pupuk hayati, hindari luka akar.'},
+ {k:'Karet',n:'Jamur akar putih',j:'penyakit',g:'Tajuk menguning, daun gugur tidak merata, akar diselimuti benang jamur putih, pohon mati mendadak.',p:'Bongkar dan bakar tunggul, buat parit isolasi, tanam tanaman penutup, aplikasi Trichoderma/belerang di sekitar perakaran pohon sehat yang berdekatan.'},
+ {k:'Ayam',n:'Tetelo (ND) & flu burung',j:'penyakit',g:'Lesu, ngorok, diare hijau, leher terpuntir, kematian cepat dan massal; jengger kebiruan (AI).',p:'Vaksinasi ND terjadwal, biosekuriti (ganti alas kaki, batasi tamu, kandang karantina), segera pisahkan dan laporkan ke petugas peternakan bila kematian mendadak banyak. Jangan jual/konsumsi ayam sakit.'},
+ {k:'Ayam',n:'Ngorok (CRD) & snot',j:'penyakit',g:'Bersin, ngorok, keluar lendir dari hidung, muka bengkak, nafsu makan turun; muncul saat kandang lembap dan amonia tinggi.',p:'Perbaiki ventilasi dan kepadatan, ganti litter basah, air minum bersih, vitamin; antibiotik sesuai petunjuk dokter hewan/petugas.'},
+ {k:'Ayam',n:'Berak darah (koksidiosis)',j:'penyakit',g:'Kotoran berdarah atau cokelat kemerahan, ayam lesu bulu kusam, pertumbuhan terhambat, kematian pada anak ayam.',p:'Litter kering dan diganti rutin, tempat minum tidak tumpah, koksidiostat dalam pakan/air minum sesuai anjuran, isolasi ayam sakit.'},
+ {k:'Kambing / Sapi',n:'Cacingan',j:'penyakit',g:'Kurus walau makan banyak, bulu kusam berdiri, diare, perut buncit, rahang bawah bengkak (bottle jaw), anemia (selaput mata pucat).',p:'Beri obat cacing rutin 3–4 bulan sekali bergilir bahan aktif, jangan gembalakan pagi saat rumput berembun, kandang panggung/kering, kotoran dibuang jauh.'},
+ {k:'Kambing / Sapi',n:'Kudis / scabies',j:'penyakit',g:'Gatal, menggosokkan badan, kulit menebal berkerak terutama di telinga, muka, kaki; bulu rontok.',p:'Pisahkan ternak sakit, mandikan dan bersihkan kerak, obat ivermectin suntik/oles sesuai petugas, semprot kandang, jemur peralatan.'},
+ {k:'Kambing / Sapi',n:'Kembung (bloat) & PMK',j:'penyakit',g:'Perut kiri membesar keras, gelisah, sulit bernapas (kembung); demam, lepuh di mulut/lidah/kuku, air liur berlebih, pincang (PMK).',p:'Kembung: hentikan pakan hijauan muda berembun, jalankan ternak, beri minyak goreng/obat anti kembung, hubungi petugas bila berat. PMK: isolasi, lapor petugas, vaksinasi, desinfeksi kandang, jangan lalu-lintaskan ternak.'},
+ {k:'Lele / Nila',n:'Aeromonas (borok merah)',j:'penyakit',g:'Luka borok merah di badan, sirip geripis, perut kembung, ikan lemah di permukaan, kematian bertahap setelah hujan/pergantian air.',p:'Kurangi padat tebar dan pakan 50%, ganti air 30% bertahap, tambahkan garam 2–3 g/L (nila hati-hati), probiotik; obat sesuai petugas perikanan. Buang ikan mati jauh dari kolam.'},
+ {k:'Lele / Nila',n:'Jamur (Saprolegnia) & white spot',j:'penyakit',g:'Benang putih seperti kapas pada luka/kulit (jamur) atau bintik putih halus di seluruh badan dan ikan menggesek badan (white spot). Muncul saat suhu turun.',p:'Jaga suhu air stabil (tutup kolam/terpal malam hari), garam 1–3 g/L, kurangi stres pengangkutan, karantina benih baru, keringkan dan kapur kolam antar siklus.'},
+ {k:'Lele / Nila',n:'Kualitas air buruk (amonia tinggi)',j:'hama',g:'Ikan megap-megap di permukaan pagi hari, air berbau busuk/hijau pekat, nafsu makan turun, kematian pagi hari.',p:'Siphon dasar kolam, ganti air 20–30%, puasakan 1 hari, tambah aerasi, kurangi pakan berlebih, aplikasi probiotik rutin.'},
+ {k:'Umum',n:'Gulma menekan tanaman',j:'hama',g:'Tanaman kerdil kekuningan karena kalah bersaing cahaya, air, dan hara; rumput teki, eceng, atau alang-alang mendominasi.',p:'Penyiangan pada 2–3 dan 5–6 minggu setelah tanam (periode kritis), mulsa, olah tanah sempurna, herbisida selektif sesuai label hanya bila tenaga tidak tersedia.'},
+ {k:'Umum',n:'Kekurangan unsur hara',j:'penyakit',g:'Daun tua kuning merata (kurang N), daun ungu/kemerahan (kurang P), tepi daun tua kuning lalu cokelat terbakar (kurang K), daun muda kuning tulang hijau (kurang Fe/Zn).',p:'Pupuk berimbang sesuai dosis anjuran dan uji tanah, pupuk organik, perbaiki pH, pupuk daun mikro bila gejala pada daun muda; catat dosis tiap petak di buku ini.'}
+];
+let dgQ='',dgK='';
+function renderDiagnosa(){const aktif=[...new Set(S.musim.filter(m=>m.status!=='selesai').map(m=>m.komoditas))];const keys=[...new Set(DIAG.map(d=>d.k))];const match=k=>aktif.some(a=>new RegExp(k.split(' / ')[0].split(' ')[0],'i').test(a)||(k==='Sayuran'&&/sawi|kubis|kol|sayur/i.test(a)));const sorted=[...keys.filter(match),...keys.filter(k=>!match(k))];
+  $('dgKom').innerHTML='<button type="button" class="chip" data-k="" aria-pressed="'+(!dgK)+'">Semua</button>'+sorted.map(k=>'<button type="button" class="chip" data-k="'+esc(k)+'" aria-pressed="'+(dgK===k)+'">'+esc(k)+'</button>').join('');
+  const q=dgQ.toLowerCase();const list=DIAG.filter(d=>(!dgK||d.k===dgK)&&(!q||(d.n+' '+d.g+' '+d.k+' '+d.p).toLowerCase().includes(q)));
+  $('dgList').innerHTML=list.length?list.map(d=>{const i=DIAG.indexOf(d);return '<details class="dg'+(d.j==='penyakit'?' pny':'')+'"><summary><span class="ic">'+svgI(d.j==='penyakit'?'spray':'bug')+'</span><span><b>'+esc(d.n)+'</b><span>'+esc(d.k)+' · '+(d.j==='penyakit'?'penyakit':'hama')+'</span></span><span class="chev">⌄</span></summary><div class="bd"><div><span class="lb">Gejala di lapangan</span><p>'+esc(d.g)+'</p></div><div><span class="lb">Pengendalian terpadu</span><p>'+esc(d.p)+'</p></div><div class="btns"><button class="btn sm tonal" type="button" data-dgcatat="'+i+'">Catat pengamatan</button><button class="btn sm tonal" type="button" data-konsul="dg:'+i+'">Tanya penyuluh</button><a class="btn sm" href="https://www.google.com/search?q='+encodeURIComponent(d.n+' '+d.k+' pengendalian')+'" target="_blank" rel="noopener">Cari info</a></div></div></details>';}).join(''):'<div class="card"><div class="empty">Tidak ada yang cocok. Coba kata gejala lain atau tanya penyuluh.</div></div>';}
+$('dgCari').addEventListener('input',()=>{dgQ=$('dgCari').value.trim();renderDiagnosa();});
+$('dgKom').addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;dgK=c.dataset.k;renderDiagnosa();});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-dgcatat]');if(!b)return;const d=DIAG[+b.dataset.dgcatat];resetForm();setJenis('keg');setKeg('Pengamatan hama');$('txKet').value='Gejala '+d.n.toLowerCase();$('txCatatan').value='Dugaan: '+d.n+'. Tindakan: ';const m=S.musim.find(x=>x.status!=='selesai'&&new RegExp(d.k.split(' / ')[0].split(' ')[0],'i').test(x.komoditas));if(m)$('txMusim').value=m.id;musimNote();go('catat');});
+
+// ===== Artikel tips & rekomendasi ahli =====
+const ARTIKEL=[
+ {id:'npk-padi',tag:'Agronomi Padi',g:'Padi',t:'Waktu tepat aplikasi pupuk NPK susulan pada padi',m:4,pop:true,b:'<p class="lead">Hindari penguapan nitrogen dan kehilangan pupuk karena hanyut.</p><h4>Jadwal yang lazim dipakai</h4><ul><li><b>Susulan I (7–15 HST):</b> urea + sebagian NPK, saat anakan mulai aktif.</li><li><b>Susulan II (25–30 HST):</b> urea sesuai bagan warna daun (BWD) + sisa NPK.</li><li><b>Susulan III (40–45 HST, primordia):</b> urea/KCl bila daun masih pucat dan hasil BWD di bawah skala 4.</li></ul><h4>Kondisi lapangan yang tepat</h4><p>Tebar saat air <b>macak-macak</b> (tanah jenuh, tidak tergenang), lalu tahan air 2–3 hari agar pupuk terserap. Lakukan pagi (sebelum 10.00) atau sore. Hindari saat terik dan menjelang hujan deras: urea mudah menguap dan hanyut, sehingga uang pupuk hilang.</p><h4>Praktik hemat</h4><p>Petak yang hijau pekat tidak perlu ditambah urea—kelebihan N justru mengundang wereng dan hawar. Gabungkan pupuk kandang 1–2 ton/ha saat olah tanah untuk memperbaiki serapan. Catat dosis per petak di menu <b>Catat Biaya</b> agar musim depan dapat dibandingkan.</p>'},
+ {id:'wereng',tag:'Agronomi Padi',g:'Padi',t:'Pengendalian wereng cokelat secara terpadu',m:3,b:'<p class="lead">Wereng meledak bila tanam tidak serempak, urea berlebih, dan musuh alami mati karena semprot sembarangan.</p><h4>Langkah pencegahan</h4><ul><li>Tanam serempak satu hamparan, pakai varietas tahan (Inpari 13, 31, 33).</li><li>Pupuk N sesuai BWD, jangan berlebih.</li><li>Biarkan laba-laba dan kepik predator hidup; jangan semprot kalender.</li></ul><h4>Pengamatan mingguan</h4><p>Periksa 20 rumpun secara diagonal, ketuk batang di atas air dan hitung wereng yang jatuh. Ambang pengendalian: 10 ekor/rumpun pada vegetatif, 20 ekor/rumpun setelah berbunga.</p><h4>Bila melampaui ambang</h4><p>Gunakan insektisida selektif terdaftar (mis. pymetrozine, buprofezin) diarahkan ke <b>pangkal batang</b>, sore hari, volume semprot cukup. Keringkan petak 3–4 hari. Catat hasil pengamatan di menu Kegiatan → Pengamatan hama agar riwayat serangan tiap musim terlihat.</p>'},
+ {id:'awd',tag:'Agronomi Padi',g:'Padi',t:'Mengatur air macak-macak dan pengeringan berselang',m:3,b:'<p class="lead">Padi tidak perlu selalu tergenang. Pengairan berselang menghemat air, memperkuat akar, dan menekan keong serta hama pangkal batang.</p><h4>Caranya</h4><ul><li>1–10 HST: genangan dangkal 2–3 cm supaya bibit mantap dan gulma tertekan.</li><li>Setelah itu biarkan air surut sampai tanah retak rambut (± 5–7 hari), lalu genangi kembali 3–5 cm. Ulangi.</li><li>Saat pemupukan: kondisi macak-macak, tahan air 2–3 hari.</li><li>Fase bunting sampai pengisian: jaga genangan 3–5 cm (paling peka kekeringan).</li><li>10–14 hari sebelum panen: keringkan petak agar gabah masak serempak.</li></ul><p>Pasang pipa paralon berlubang 30 cm ke dalam tanah untuk melihat muka air. Catat kondisi air di detail petak (ketuk kotak <b>Kondisi air</b>).</p>'},
+ {id:'faw',tag:'Palawija',g:'Palawija',t:'Mengenali dan menangani ulat grayak jagung (FAW)',m:3,b:'<p class="lead">Ulat grayak jagung bersembunyi di corong daun sehingga semprotan biasa sering tidak mengenainya.</p><h4>Kenali cepat</h4><p>Serbuk seperti gergaji di pucuk, daun berlubang memanjang, ulat dengan huruf Y terbalik di kepala. Serangan paling merugikan pada umur 2–6 minggu.</p><h4>Tindakan</h4><ul><li>Amati 2 kali seminggu sejak tanaman muncul; ambil ulat dengan tangan bila sedikit.</li><li>Taburkan pasir/abu dapur/serbuk gergaji ke corong untuk menekan ulat.</li><li>Pasang perangkap feromon 4–6/ha.</li><li>Bila >10–20% tanaman rusak, semprot pagi/sore <b>mengarah ke corong</b>: Bt, Metarhizium, atau emamektin benzoat/spinetoram secara bergilir agar tidak kebal.</li></ul><p>Tanam serempak dan rotasi dengan kacang-kacangan memutus siklus. Catat jumlah ulat per 10 tanaman tiap pengamatan.</p>'},
+ {id:'patek',tag:'Hortikultura',g:'Hortikultura',t:'Menekan antraknosa (patek) cabai di musim hujan',m:4,pop:true,b:'<p class="lead">Patek menyebar lewat percikan air hujan dari buah sakit ke buah sehat.</p><h4>Sebelum tanam</h4><ul><li>Benih sehat; rendam air hangat 50 °C selama 30 menit atau perlakuan fungisida benih.</li><li>Bedengan tinggi, mulsa plastik perak-hitam, jarak tanam 60×70 cm agar tajuk cepat kering.</li><li>Kapur bila pH < 6; pupuk kandang matang dan Trichoderma.</li></ul><h4>Saat berbuah</h4><ul><li>Petik dan <b>bakar/kubur</b> buah bergejala; jangan dibuang di parit kebun.</li><li>Pangkas tunas air dan daun bawah untuk aliran udara.</li><li>Fungisida kontak (mankozeb/klorotalonil) tiap 5–7 hari saat hujan, selang-seling dengan sistemik (azoksistrobin, difenokonazol). Semprot setelah hujan reda, tambahkan perekat.</li></ul><p>Panen bertahap lebih sering (3–4 hari sekali) saat musim hujan agar buah tidak sempat terinfeksi di lapangan. Catat tiap petik di menu Catat Panen untuk melihat hasil kumulatif per petak.</p>'},
+ {id:'hpp',tag:'Pembukuan',g:'Umum',t:'Menghitung biaya pokok dan harga impas hasil panen',m:3,pop:true,b:'<p class="lead">Harga jual minimal supaya tidak rugi = seluruh biaya ÷ hasil panen.</p><h4>Contoh padi 0,5 ha</h4><p>Total biaya musim (benih, pupuk, upah, sewa traktor, angkut) Rp4.500.000. Hasil 2.800 kg gabah kering panen. Biaya per kg = 4.500.000 ÷ 2.800 = <b>Rp1.607/kg</b>. Itulah <b>BEP harga</b>: bila tengkulak menawar di bawah angka itu, Anda rugi.</p><h4>BEP hasil</h4><p>Bila harga pasar Rp5.500/kg, hasil minimal agar impas = 4.500.000 ÷ 5.500 = <b>818 kg</b>. Di atas itu baru untung.</p><h4>R/C</h4><p>Pendapatan 2.800 × 5.500 = Rp15.400.000. R/C = 15,4 juta ÷ 4,5 juta = 3,4 → setiap Rp1 modal kembali Rp3,4. R/C di bawah 1 berarti rugi.</p><p>Aplikasi menghitung semua ini otomatis di rincian musim selama biaya, panen, dan penjualan dicatat lengkap—termasuk upah keluarga sendiri agar untung yang terlihat adalah untung sebenarnya.</p>'},
+ {id:'catat5',tag:'Pembukuan',g:'Umum',t:'Catat 5 menit sehari: disiplin pembukuan usaha tani',m:2,b:'<p class="lead">Buku kas yang rapi membuat Anda tahu komoditas mana yang benar-benar menguntungkan.</p><ul><li><b>Hari yang sama:</b> catat belanja saprodi dan upah sebelum nota hilang; foto notanya.</li><li><b>Pisahkan per petak/musim:</b> pilih petak saat mencatat agar R/C tiap musim bisa dibandingkan.</li><li><b>Catat panen walau belum dijual</b>, lalu catat penjualannya terpisah (jumlah kg × harga).</li><li><b>Utang kios:</b> pilih "Belum dibayar" dan isi nama kios; tandai lunas saat dibayar.</li><li><b>Bantuan dan pinjaman</b> bukan pendapatan usaha—pilih kategori yang sesuai.</li><li><b>Cadangkan</b> data tiap bulan ke WhatsApp/Drive lewat menu Keuangan.</li></ul><p>Di akhir musim, cetak Buku Usahatani (PDF) untuk laporan kelompok tani atau syarat KUR.</p>'},
+ {id:'pascapanen',tag:'Pascapanen',g:'Umum',t:'Pascapanen: jemur, kadar air, dan waktu jual',m:3,b:'<p class="lead">Kehilangan hasil pascapanen padi bisa 10–20% bila penanganan terlambat.</p><ul><li>Panen saat 90–95% malai menguning; rontokkan hari itu juga.</li><li>Jemur di lantai/terpal tebal 5–7 cm, dibalik tiap 1–2 jam, sampai kadar air 14% (gigit gabah terasa keras dan berbunyi).</li><li>Simpan di karung bersih di atas palet, jauh dari dinding, bebas tikus.</li><li>Gabah kering giling berharga lebih tinggi daripada gabah basah; bandingkan selisih harga dengan biaya jemur dan susut sebelum memutuskan jual.</li></ul><p>Catat harga per kg tiap penjualan; aplikasi akan menampilkan harga rata-rata dan membandingkannya dengan biaya per kg.</p>'},
+ {id:'biosekuriti',tag:'Peternakan',g:'Ternak',t:'Biosekuriti sederhana kandang ayam dan itik',m:3,b:'<p class="lead">Mencegah penyakit jauh lebih murah daripada mengobati kematian massal.</p><ul><li>Satu pintu masuk, bak celup kaki berisi desinfektan yang diganti tiap 2 hari.</li><li>Batasi tamu dan pedagang; alat (ember, sekop) khusus per kandang.</li><li>Karantina ayam/itik baru 2 minggu sebelum digabung.</li><li>Air minum bersih, pakan tidak lembap/berjamur, litter kering, ventilasi lancar.</li><li>Vaksinasi ND sesuai jadwal; catat tanggal vaksin dan obat di menu Kegiatan.</li><li>Bangkai dibakar/dikubur dalam; lapor petugas bila kematian mendadak banyak.</li></ul><p>Catat pakan sebagai biaya terbesar dan jumlah ekor terjual sebagai pemasukan agar untung per periode terlihat jelas.</p>'},
+ {id:'airkolam',tag:'Perikanan',g:'Ternak',t:'Menjaga kualitas air kolam lele dan nila',m:3,b:'<p class="lead">Sebagian besar kematian ikan berawal dari air yang buruk, bukan dari penyakit.</p><ul><li>Pakan secukupnya (habis dalam 5 menit); sisa pakan membusuk menjadi amonia.</li><li>Siphon dasar kolam dan ganti air 20–30% tiap minggu, lebih sering saat kolam padat.</li><li>Pasang aerasi atau air mengalir pelan; ikan megap-megap pagi hari adalah tanda oksigen rendah.</li><li>Tambahkan probiotik dan garam 1–2 g/L setelah ganti air atau saat hujan deras.</li><li>Keringkan dan kapur kolam 100–200 g/m² antar siklus.</li></ul><p>Hitung FCR (pakan habis ÷ bobot panen); FCR di atas 1,2 untuk lele berarti pakan terbuang. Semua angka ini tersedia bila pakan dan panen dicatat per siklus.</p>'}
+];
+function artCard(a,full){return '<button type="button" class="art'+(full?' full':'')+'" data-art="'+a.id+'"><span class="im">'+artIll(a)+'<span class="rd">'+a.m+' Mnt Baca</span></span><span class="t"><span class="tags"><span class="pill">'+esc(a.tag)+'</span>'+(a.pop?'<span>• Populer</span>':'')+'</span><h4>'+esc(a.t)+'</h4><p>'+esc(a.b.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim().slice(0,110))+'…</p></span></button>';}
+function artIll(a){const g=a.g;const col=g==='Padi'?['#9fd8b4','#1b7a43']:g==='Hortikultura'?['#f6c28b','#c9442e']:g==='Ternak'?['#f3d9a4','#8a5200']:g==='Palawija'?['#ffe08a','#b08a1e']:['#bfe3f5','#2a7bd1'];
+  return '<svg viewBox="0 0 120 120" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="a'+a.id+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+col[0]+'"/><stop offset="1" stop-color="'+col[1]+'"/></linearGradient></defs><rect width="120" height="120" fill="url(#a'+a.id+')"/><g stroke="rgba(255,255,255,.75)" stroke-width="3" fill="none" stroke-linecap="round"><path d="M20 100c10-30 25-45 40-55"/><path d="M60 45c-14-2-22-12-22-26 14 2 22 12 22 26z"/><path d="M60 45c14-2 22-12 22-26-14 2-22 12-22 26z"/><path d="M35 100c8-18 18-28 30-35"/></g><circle cx="96" cy="24" r="10" fill="rgba(255,255,255,.6)"/></svg>';}
+function pilihArtikel(){const gs=[...new Set(S.musim.filter(m=>m.status!=='selesai').map(m=>grup(m.komoditas)))];const pool=ARTIKEL.filter(a=>gs.includes(a.g));const list=pool.length?pool:ARTIKEL;return list[new Date().getDate()%list.length];}
+let artT='';
+function renderArtikel(){const tags=[...new Set(ARTIKEL.map(a=>a.tag))];$('artTag').innerHTML='<button type="button" class="chip" data-t="" aria-pressed="'+(!artT)+'">Semua</button>'+tags.map(t=>'<button type="button" class="chip" data-t="'+esc(t)+'" aria-pressed="'+(artT===t)+'">'+esc(t)+'</button>').join('');
+  const u=pilihArtikel();const list=ARTIKEL.filter(a=>!artT||a.tag===artT).sort((a,b)=>(b.id===u.id)-(a.id===u.id)||(b.pop?1:0)-(a.pop?1:0));$('artList').innerHTML=list.map(a=>artCard(a,false)).join('');}
+$('artTag').addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;artT=c.dataset.t;renderArtikel();});
+let bacaId='';
+function baca(id){const a=ARTIKEL.find(x=>x.id===id);if(!a)return;bacaId=id;$('bacaBody').innerHTML='<div class="tags" style="display:flex;gap:8px;align-items:center;font-size:.74rem;color:var(--muted)"><span class="pill">'+esc(a.tag)+'</span>'+a.m+' menit baca</div><h3 style="margin:8px 0 10px;font-size:1.15rem">'+esc(a.t)+'</h3>'+a.b+'<div class="hint" style="margin-top:8px">Rangkuman praktik umum budidaya; sesuaikan dengan anjuran penyuluh dan kondisi lahan setempat.</div>';$('ovBaca').hidden=false;$('ovBaca').querySelector('.sheet').scrollTop=0;}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-art]');if(b)baca(b.dataset.art);});
+$('bacaTutup').onclick=()=>$('ovBaca').hidden=true;
+$('bacaBagikan').onclick=()=>{const a=ARTIKEL.find(x=>x.id===bacaId);if(!a)return;const txt='*'+a.t+'*\n\n'+a.b.replace(/<li>/g,'• ').replace(/<\/(p|li|h4|ul)>/g,'\n').replace(/<[^>]+>/g,'').replace(/\n{3,}/g,'\n\n').trim()+'\n\n(dari aplikasi Buku Tani)';if(navigator.share){navigator.share({title:a.t,text:txt}).catch(()=>{});}else{fallbackCopy(txt);}};
+
+// ===== Konsultasi penyuluh (WhatsApp) =====
+function waNumber(){let n=(S.atur.penyWa||'').replace(/[^\d]/g,'');if(n.startsWith('0'))n='62'+n.slice(1);return n;}
+function konsultasi(ctx){const n=waNumber();if(!n){toast('Isi nomor WhatsApp penyuluh di Profil dulu.');go('atur');$('sub-usaha').hidden=false;$('sPenyWa').focus();return;}
+  const berj=S.musim.filter(m=>m.status!=='selesai');const m=berj[0];let isi='Selamat pagi/siang '+(S.atur.penyNama||'Bapak/Ibu Penyuluh')+', saya '+(S.atur.nama||'petani')+(S.atur.poktan?' dari '+S.atur.poktan:'')+(S.atur.desa?' ('+S.atur.desa+')':'')+'. ';
+  if(ctx&&ctx.startsWith('dg:')){const d=DIAG[+ctx.slice(3)];isi+='Saya menemukan gejala yang mirip '+d.n+' ('+d.k+'): '+d.g+' Mohon saran pengendaliannya.';}
+  else if(m){const a=analisa(m);isi+='Saya ingin berkonsultasi mengenai tanaman '+m.komoditas+(m.varietas?' '+m.varietas:'')+' di '+musimLabel(m)+' (HST '+a.hari+', fase '+(m.fase||'-')+'). Kendala: ';}
+  else isi+='Saya ingin berkonsultasi mengenai usaha tani saya. ';
+  const a=document.createElement('a');a.href='https://wa.me/'+n+'?text='+encodeURIComponent(isi);a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();}
+$('btnKonsultasi').onclick=()=>konsultasi('');
+document.addEventListener('click',e=>{const b=e.target.closest('[data-konsul]');if(b)konsultasi(b.dataset.konsul);});
+
+// ===== Ekspor =====
+$('btnEkspor').onclick=()=>$('ovEkspor').hidden=false;$('ekTutup').onclick=()=>$('ovEkspor').hidden=true;
+$('ekCsv').onclick=()=>{$('ovEkspor').hidden=true;exportCsv('');};$('ekPdf').onclick=()=>{$('ovEkspor').hidden=true;cetak('');};$('ekJson').onclick=()=>{$('ovEkspor').hidden=true;backup();};
+
+// ===== Cetak Buku Usahatani (PDF) =====
+function cetakHtml(musimId){const ms=(musimId?S.musim.filter(m=>m.id===musimId):[...S.musim]).sort((a,b)=>a.mulai.localeCompare(b.mulai));const q=esc;const td=(v,r)=>'<td'+(r?' class="r"':'')+'>'+v+'</td>';
+  let h='<!doctype html><html lang="id"><head><meta charset="utf-8"><title>Buku Usahatani '+q(S.atur.nama||'')+'</title><style>@page{margin:14mm}body{font-family:Arial,Helvetica,sans-serif;font-size:10.5pt;color:#1e2b23;margin:0}h1{font-size:17pt;margin:0 0 2px;color:#146034}h2{font-size:13pt;margin:18px 0 6px;color:#146034;border-bottom:2px solid #1b7a43;padding-bottom:3px}h3{font-size:11pt;margin:12px 0 4px}.sub{color:#536859;font-size:9.5pt}table{width:100%;border-collapse:collapse;margin:4px 0 8px;font-size:9.5pt}th,td{border:1px solid #c9d8ce;padding:4px 6px;text-align:left;vertical-align:top}th{background:#e7f3eb;font-size:8.5pt;text-transform:uppercase;letter-spacing:.04em}td.r,th.r{text-align:right;white-space:nowrap}.kpi{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}.kpi div{flex:1 1 28%;border:1px solid #c9d8ce;border-radius:6px;padding:6px 8px}.kpi label{display:block;font-size:8pt;color:#536859}.kpi b{font-size:11.5pt}.pb{page-break-before:always}.ttd{display:flex;justify-content:space-between;margin-top:28px;font-size:9.5pt}.ttd div{width:40%;text-align:center}.ttd .l{height:56px}small{color:#536859}</style></head><body>';
+  h+='<h1>Buku Usahatani</h1><div class="sub">'+q(S.atur.nama||'—')+(S.atur.poktan?' · '+q(S.atur.poktan):'')+(S.atur.desa?' · '+q(S.atur.desa):'')+' · dicetak '+fmtTglHari(today())+'</div>';
+  if(!musimId){const agg=ms.reduce((acc,m)=>{const a=analisa(m);acc.b+=a.biaya;acc.p+=a.pend;return acc;},{b:0,p:0});h+='<h2>Ringkasan seluruh musim</h2><div class="kpi"><div><label>Jumlah musim</label><b>'+ms.length+'</b></div><div><label>Total biaya</label><b>'+rp(agg.b)+'</b></div><div><label>Total pendapatan</label><b>'+rp(agg.p)+'</b></div><div><label>Untung bersih</label><b>'+rps(agg.p-agg.b)+'</b></div><div><label>R/C</label><b>'+fmtRc(agg.b?agg.p/agg.b:null)+'</b></div><div><label>Saldo kas</label><b>'+rps(saldo())+'</b></div></div>';
+    h+='<table><tr><th>Musim</th><th class="r">Ha</th><th class="r">Biaya</th><th class="r">Hasil</th><th class="r">Pendapatan</th><th class="r">Untung</th><th class="r">R/C</th><th class="r">BEP harga</th></tr>'+ms.map(m=>{const a=analisa(m);return '<tr>'+td(q(musimLabel(m))+'<br><small>'+fmtTgl(m.mulai)+(m.status==='selesai'?' – '+fmtTgl(m.selesai):' (berjalan)')+'</small>')+td(a.ha?fq(a.ha):'—',1)+td(rp(a.biaya),1)+td(fq(a.hasil)+' '+q(m.satuan),1)+td(rp(a.pend),1)+td(rps(a.untung),1)+td(fmtRc(a.rc),1)+td(a.biayaUnit?rp(a.biayaUnit):'—',1)+'</tr>';}).join('')+'</table>';
+    const umum=S.tx.filter(t=>!t.musimId);if(umum.length)h+='<h3>Kas umum (tanpa petak)</h3><table><tr><th>Tanggal</th><th>Jenis</th><th>Kategori</th><th>Rincian</th><th class="r">Jumlah</th></tr>'+umum.sort((a,b)=>a.tgl.localeCompare(b.tgl)).map(t=>'<tr>'+td(fmtTgl(t.tgl))+td(t.jenis==='in'?'Masuk':'Biaya')+td(q(t.kat))+td(q(t.ket||''))+td((t.jenis==='in'?'+':'−')+rp(t.jumlah),1)+'</tr>').join('')+'</table>';}
+  ms.forEach((m,i)=>{const a=analisa(m);const l=lahanOf(m.lahanId);h+='<div class="'+(i>0||!musimId?'pb':'')+'"><h2>'+q(musimLabel(m))+(m.varietas?' · '+q(m.varietas):'')+'</h2>';
+    h+='<table><tr><th>Petak</th><th>Jenis</th><th>Luas</th><th>Tanggal tanam</th><th>'+(m.status==='selesai'?'Selesai':'Perkiraan panen')+'</th><th>HST</th><th>Fase</th><th>Kondisi</th><th>Air</th></tr><tr>'+td(q(l?l.nama:'—'))+td(l?JENIS_LAHAN[l.jenis]:'—')+td(a.ha?fq(a.ha)+' ha':'—')+td(fmtTgl(m.mulai))+td(fmtTgl(m.status==='selesai'?m.selesai:m.est))+td(a.hari)+td(q(m.fase||'—'))+td(q(m.kondisi||'—'))+td(q(m.air||'—'))+'</tr></table>';
+    h+='<div class="kpi"><div><label>Total biaya</label><b>'+rp(a.biaya)+'</b></div><div><label>Pendapatan penjualan</label><b>'+rp(a.pend)+'</b></div><div><label>Untung bersih</label><b>'+rps(a.untung)+'</b></div><div><label>Hasil panen</label><b>'+fq(a.hasil)+' '+q(m.satuan)+'</b></div><div><label>Hasil per ha</label><b>'+(a.prod?fq(Math.round(a.prod))+' '+q(m.satuan):'—')+'</b></div><div><label>R/C · B/C</label><b>'+fmtRc(a.rc)+' · '+fmtRc(a.bc)+'</b></div><div><label>Biaya per '+q(m.satuan)+' (BEP harga)</label><b>'+(a.biayaUnit?rp(a.biayaUnit):'—')+'</b></div><div><label>BEP hasil</label><b>'+(a.bepHasil?fq(Math.round(a.bepHasil))+' '+q(m.satuan):'—')+'</b></div><div><label>Harga jual rata-rata</label><b>'+(a.hargaRata?rp(a.hargaRata):'—')+'</b></div>'+(m.target?'<div><label>Target hasil · harga pasar</label><b>'+fq(m.target)+' '+q(m.satuan)+(m.harga?' · '+rp(m.harga):'')+'</b></div>':'')+(m.anggaran?'<div><label>Plafon anggaran</label><b>'+rp(m.anggaran)+' ('+(a.biaya<=m.anggaran?'efisien':'melebihi')+')</b></div>':'')+(a.proyUntung!==null&&!a.pend?'<div><label>Proyeksi laba (target × harga − biaya)</label><b>'+rps(a.proyUntung)+'</b></div>':'')+'</div>';
+    const items=Object.entries(a.byKat).sort((x,y)=>y[1]-x[1]);if(items.length)h+='<h3>Biaya per kategori</h3><table><tr><th>Kategori</th><th class="r">Jumlah</th><th class="r">Porsi</th></tr>'+items.map(([k,v])=>'<tr>'+td(q(k))+td(rp(v),1)+td(Math.round(v/a.biaya*100)+'%',1)+'</tr>').join('')+'<tr><th>Total</th><th class="r">'+rp(a.biaya)+'</th><th class="r">100%</th></tr></table>';
+    const tx=[...a.tx].sort((x,y)=>x.tgl.localeCompare(y.tgl));h+='<h3>Buku kas ('+tx.length+' transaksi)</h3><table><tr><th>Tgl</th><th>Jenis</th><th>Kategori</th><th>Rincian</th><th>Pihak</th><th class="r">Vol × harga</th><th class="r">Jumlah</th><th>Bayar</th></tr>'+(tx.length?tx.map(t=>'<tr>'+td(fmtTgl(t.tgl))+td(t.jenis==='in'?'Masuk':'Biaya')+td(q(t.kat))+td(q(t.ket||''))+td(q(t.pihak||''))+td(t.qty?fq(t.qty)+' '+q(t.satuan||'')+(t.harga?' × '+rp(t.harga):''):'',1)+td((t.jenis==='in'?'+':'−')+rp(t.jumlah),1)+td(q(t.metode)+(t.tglLunas?'<br><small>lunas '+fmtTgl(t.tglLunas)+'</small>':''))+'</tr>').join(''):'<tr><td colspan="8"><small>Belum ada transaksi</small></td></tr>')+'</table>';
+    const pn=S.panen.filter(p=>p.musimId===m.id).sort((x,y)=>x.tgl.localeCompare(y.tgl));if(pn.length)h+='<h3>Catatan panen</h3><table><tr><th>Tgl</th><th>Keterangan</th><th class="r">Hasil</th></tr>'+pn.map(p=>'<tr>'+td(fmtTgl(p.tgl))+td(q(p.ket||''))+td(fq(p.qty)+' '+q(m.satuan),1)+'</tr>').join('')+'<tr><th colspan="2">Total</th><th class="r">'+fq(a.hasil)+' '+q(m.satuan)+'</th></tr></table>';
+    const kg=[...a.kegs].sort((x,y)=>x.tgl.localeCompare(y.tgl));if(kg.length)h+='<h3>Catatan kegiatan lahan</h3><table><tr><th>Tgl</th><th>Jenis</th><th>Kegiatan</th><th>Tenaga</th><th>Catatan</th></tr>'+kg.map(k=>'<tr>'+td(fmtTgl(k.tgl))+td(q(k.jenisKeg))+td(q(k.judul||''))+td((k.orang?k.orang+' org':'')+(k.jam?' · '+fq(k.jam)+' jam':''))+td(q(k.catatan||''))+'</tr>').join('')+'</table>';
+    const jd=S.jadwal.filter(j=>j.musimId===m.id&&!j.done).sort((x,y)=>x.tgl.localeCompare(y.tgl));if(jd.length)h+='<h3>Jadwal mendatang</h3><table><tr><th>Tgl</th><th>Kegiatan</th><th>Buruh</th><th>Catatan</th></tr>'+jd.map(j=>'<tr>'+td(fmtTgl(j.tgl))+td(q(j.judul))+td(j.orang?j.orang+' org'+(j.upah?' × '+rp(j.upah):''):'')+td(q(j.catatan||''))+'</tr>').join('')+'</table>';
+    h+='</div>';});
+  h+='<div class="ttd"><div>Petani / pengelola<div class="l"></div>( '+q(S.atur.nama||'…………………')+' )</div><div>Ketua Poktan / Penyuluh<div class="l"></div>( '+q(S.atur.penyNama||'…………………')+' )</div></div><p><small>Dicetak dari aplikasi Buku Tani · R/C = pendapatan ÷ biaya · BEP harga = biaya ÷ hasil · BEP hasil = biaya ÷ harga rata-rata.</small></p></body></html>';return h;}
+function cetak(musimId){const html=cetakHtml(musimId);
+  if(window.Android&&window.Android.print){try{window.Android.print(html);return;}catch(e){}}
+  try{const f=document.createElement('iframe');f.style.cssText='position:fixed;right:0;bottom:0;width:0;height:0;border:0';document.body.appendChild(f);f.onload=()=>{setTimeout(()=>{try{f.contentWindow.focus();f.contentWindow.print();}catch(e){toast('Peramban tidak mendukung cetak. Gunakan Ekspor CSV.');}setTimeout(()=>f.remove(),60000);},300);};f.srcdoc=html;toast('Pilih "Simpan sebagai PDF" di jendela cetak.');}
+  catch(e){const w=window.open('','_blank');if(w){w.document.write(html);w.document.close();setTimeout(()=>w.print(),400);}}}
+
 // ===== Mulai =====
 resetForm();renderBeranda();mulaiCheck();
 let start='beranda';try{start=localStorage.getItem(KEY+'.view')||'beranda';}catch(e){}
 go(['beranda','lahan','keuangan'].includes(start)?start:'beranda');
+cuacaRefresh(false);setInterval(()=>{if(cur==='beranda')cuacaRefresh(false);notifDot();},10*60*1000);
 })();
 
 </script>
