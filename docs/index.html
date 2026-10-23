@@ -552,7 +552,7 @@ nav.bottom button[aria-current="page"]{color:var(--accent);font-weight:700}
   <div class="hero" id="heroLahan">
     <svg class="deco" viewBox="0 0 64 64"><circle cx="18" cy="46" r="8"/><circle cx="48" cy="48" r="6"/><path d="M26 46h14M14 38l4-14h18l6 14M22 24V14h10"/></svg>
     <div class="hrow"><span class="pill glass dot" id="lhMusimPill">Musim tanam aktif</span><button class="iconbtn" type="button" id="btnLahanKelola" aria-label="Kelola lahan" style="background:rgba(255,255,255,.18);color:#fff;box-shadow:none"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h2M10 12h10M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="7" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg></button></div>
-    <div><div class="lbl">Ringkasan operasional lapangan</div><div class="big" id="lhNama">Hamparan</div><div class="lbl" id="lhDesa">—</div></div>
+    <div><div class="lbl">Ringkasan operasional lapangan</div><div class="big" id="lhTitle">Hamparan</div><div class="lbl" id="lhSub">—</div></div>
   </div>
   <div class="stat3" id="lhStats"></div>
   <button class="btn primary block" type="button" id="btnMusimBaru"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Buka buku catatan &amp; musim baru</button>
@@ -948,7 +948,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-detail]');
 // ===== Beranda =====
 function renderBeranda(){const h=new Date().getHours();const sapa=h<11?'Selamat pagi':h<15?'Selamat siang':h<18?'Selamat sore':'Selamat malam';$('greetTxt').textContent=sapa+(S.atur.nama?', '+S.atur.nama.split(' ').slice(0,2).join(' '):'')+' 🌱';
   $('topAvatar').textContent=initials(S.atur.nama);const berj=S.musim.filter(x=>x.status!=='selesai');const yr=String(new Date().getFullYear());const mt=S.musim.filter(m=>m.mulai.startsWith(yr)).length;$('greetPill').textContent=berj.length?'Musim Tanam '+(mt||berj.length):'Belum ada musim';
-  cuacaRender();$('artUnggulan').innerHTML=artCard(pilihArtikel(),false);$('penySub').textContent=S.atur.penyWa?'Ada kendala hama mendadak? Hubungi '+(S.atur.penyNama||'penyuluh')+' via WhatsApp.':'Ada kendala hama mendadak? Atur nomor WhatsApp penyuluh di Profil.';
+  cuacaRender();cuacaRefresh(false);$('artUnggulan').innerHTML=artCard(pilihArtikel(),false);$('penySub').textContent=S.atur.penyWa?'Ada kendala hama mendadak? Hubungi '+(S.atur.penyNama||'penyuluh')+' via WhatsApp.':'Ada kendala hama mendadak? Atur nomor WhatsApp penyuluh di Profil.';
   let tipT='Mulai dari lahan',tipB='Tambahkan petak lahan lalu buka musim tanam pertama.';
   const due=berj.map(m=>({m,a:analisa(m)})).filter(x=>x.a.total&&x.a.total-x.a.hari<=14).sort((x,y)=>(x.a.total-x.a.hari)-(y.a.total-y.a.hari))[0];
   const hu=hutangPerPihak('out'),pi=hutangPerPihak('in');const hs=hu.reduce((a,[,v])=>a+v.s,0),ps=pi.reduce((a,[,v])=>a+v.s,0);
@@ -970,7 +970,7 @@ function renderBeranda(){const h=new Date().getHours();const sapa=h<11?'Selamat 
 
 // ===== Lahan =====
 let musimF='berjalan',grupF='';
-function renderLahan(){$('lhNama').textContent=S.atur.poktan||'Lahan '+(S.atur.nama||'saya');$('lhDesa').textContent='📍 '+(S.atur.desa||'Lokasi belum diisi');const berj=S.musim.filter(m=>m.status!=='selesai');$('lhMusimPill').textContent=berj.length?'Musim tanam aktif ('+berj.length+')':'Belum ada musim aktif';
+function renderLahan(){$('lhTitle').textContent=S.atur.poktan||'Lahan '+(S.atur.nama||'saya');$('lhSub').textContent='📍 '+(S.atur.desa||'Lokasi belum diisi');const berj=S.musim.filter(m=>m.status!=='selesai');$('lhMusimPill').textContent=berj.length?'Musim tanam aktif ('+berj.length+')':'Belum ada musim aktif';
   const ha=S.lahan.reduce((a,l)=>a+(l.luas||0),0)/10000;const kom=new Set(berj.map(m=>m.komoditas)).size;const yr=new Date().getFullYear();
   $('lhStats').innerHTML='<div class="s"><span class="ic">'+svgI('land')+'</span><label>Luas lahan</label><b>'+fq(ha)+' <small>Ha</small></b></div><div class="s"><span class="ic">'+svgI('leaf')+'</span><label>Komoditas</label><b>'+kom+' <small>jenis</small></b></div><div class="s"><span class="ic">'+svgI('cal')+'</span><label>Periode</label><b>'+yr+' <small>MT '+(S.musim.filter(m=>m.mulai.startsWith(String(yr))).length||'—')+'</small></b></div>';
   document.querySelectorAll('#musimFilter .chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.f===musimF));
